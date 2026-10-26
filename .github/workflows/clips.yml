@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 350
     env:
-      SONGGAME_SOUNDFONT: /usr/share/sounds/sf2/FluidR3_GM.sf2
+      SONGGAME_SAMPLES: /home/runner/piano-samples
     steps:
       - uses: actions/checkout@v4
 
@@ -47,13 +47,24 @@ jobs:
           cache: pip
           cache-dependency-path: pipeline/requirements.txt
 
-      - name: Install audio tools
-        timeout-minutes: 15
-        env:
-          DEBIAN_FRONTEND: noninteractive
+      - name: Check ffmpeg
+        run: ffmpeg -version | head -1
+
+      - name: Cache piano samples
+        uses: actions/cache@v4
+        with:
+          path: ~/piano-samples
+          key: salamander-v1
+
+      - name: Get piano samples (Salamander Grand, via Tone.js)
+        timeout-minutes: 5
         run: |
-          sudo -E apt-get update -q
-          sudo -E apt-get install -y -q --no-install-recommends ffmpeg fluidsynth fluid-soundfont-gm
+          mkdir -p ~/piano-samples && cd ~/piano-samples
+          names="A0"; for o in 1 2 3 4 5 6 7; do names="$names C$o Ds$o Fs$o A$o"; done; names="$names C8"
+          for n in $names; do
+            [ -s "$n.mp3" ] || curl -fsSL --retry 3 -o "$n.mp3" "https://tonejs.github.io/audio/salamander/$n.mp3" || echo "missing $n"
+          done
+          ls | wc -l
 
       - name: Install Python packages
         run: pip install -r pipeline/requirements.txt

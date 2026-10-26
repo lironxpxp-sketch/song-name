@@ -99,10 +99,17 @@ def write_midi(notes: list[Note], path, tempo_bpm=120, ppq=480):
 # ---------------------------------------------------------------------------
 # Rendering
 # ---------------------------------------------------------------------------
-def render(notes: list[Note], wav_path, soundfont=None, sr=44100) -> Path:
-    """Render notes to a WAV. Uses FluidSynth + a piano SoundFont when given
-    (much better sound); otherwise a built-in synthesized piano."""
+def render(notes: list[Note], wav_path, soundfont=None, sr=44100, samples=None) -> Path:
+    """Render notes to a WAV, best available sound first:
+    real piano recordings (samples dir) > FluidSynth SoundFont > built-in synth."""
+    import os
     wav_path = Path(wav_path)
+    samples = samples or os.environ.get("SONGGAME_SAMPLES")
+    if samples and Path(samples).is_dir():
+        bank = load_samples(samples, sr)
+        if bank:
+            A.write_wav(wav_path, sampled_piano(notes, bank, sr), sr)
+            return wav_path
     if soundfont and Path(soundfont).exists() and shutil.which("fluidsynth"):
         mid = wav_path.with_suffix(".mid")
         write_midi(notes, mid)
@@ -112,6 +119,62 @@ def render(notes: list[Note], wav_path, soundfont=None, sr=44100) -> Path:
         return wav_path
     A.write_wav(wav_path, synth_piano(notes, sr), sr)
     return wav_path
+
+
+# Salamander Grand Piano samples as published by Tone.js: A0, C1, Ds1, Fs1, A1 … C8
+_NOTE_PC = {"C": 0, "Ds": 3, "Fs": 6, "A": 9}
+_bank_cache = {}
+
+
+def sample_names():
+    out = ["A0"]
+    for octave in range(1, 8):
+        out += [f"{n}{octave}" for n in ("C", "Ds", "Fs", "A")]
+    return out + ["C8"]
+
+
+def load_samples(folder, sr=44100):
+    key = (str(folder), sr)
+    if key not in _bank_cache:
+        bank = {}
+        for name in sample_names():
+            f = Path(folder) / f"{name}.mp3"
+            if f.exists():
+                pc, octave = _NOTE_PC[name[:-1]], int(name[-1])
+                bank[12 * (octave + 1) + pc] = A.decode(f, sr)
+        _bank_cache[key] = bank
+    return _bank_cache[key]
+
+
+def sampled_piano(notes: list[Note], bank: dict, sr=44100) -> np.ndarray:
+    """Play notes with recorded piano samples, pitch-shifted from the nearest one."""
+    if not notes:
+        return np.zeros(sr, dtype=np.float32)
+    keys = np.array(sorted(bank))
+    total = max(n.end for n in notes) + 1.5
+    out = np.zeros(int(total * sr))
+    release = 0.18
+    for n in notes:
+        base = int(keys[np.argmin(np.abs(keys - n.pitch))])
+        ratio = 2 ** ((n.pitch - base) / 12)
+        src = bank[base]
+        length = int((max(n.end - n.start, 0.08) + release) * sr)
+        pos = np.arange(length) * ratio
+        pos = pos[pos < len(src) - 1]
+        seg = np.interp(pos, np.arange(len(src)), src)
+        held = int(max(n.end - n.start, 0.08) * sr)
+        if len(seg) > held:
+            seg[held:] *= np.exp(-np.arange(len(seg) - held) / (0.06 * sr))   # damper
+        seg *= (n.velocity / 127.0) ** 1.6
+        i = int(n.start * sr)
+        end = min(len(out), i + len(seg))
+        out[i:end] += seg[: end - i]
+    ir_t = np.arange(int(0.8 * sr)) / sr
+    ir = np.random.default_rng(0).standard_normal(len(ir_t)) * np.exp(-ir_t / 0.22) * 0.015
+    ir[0] = 1.0
+    out = fftconvolve(out, ir)[: len(out)]
+    peak = np.abs(out).max() or 1.0
+    return (0.9 * out / peak).astype(np.float32)
 
 
 def synth_piano(notes: list[Note], sr=44100) -> np.ndarray:
