@@ -11,7 +11,7 @@ _HEBREW_MARKS = re.compile(r"[֑-ׇ]")
 _BRACKETS = re.compile(r"\s*[\(\[\{][^\)\]\}]*[\)\]\}]\s*")
 _VERSION_WORDS = re.compile(
     r"\b(feat|ft|featuring|remaster(ed)?|radio edit|edit|version|live|mix|remix|"
-    r"mono|stereo|from|prod|acoustic|deluxe|bonus|explicit|clean)\b",
+    r"mono|stereo|from|prod|with|acoustic|deluxe|bonus|explicit|clean)\b",
     re.IGNORECASE,
 )
 # A trailing " - Remastered 2011" style suffix.
