@@ -14,17 +14,30 @@ def decode(path, sr=44100) -> np.ndarray:
     return np.frombuffer(raw, dtype=np.float32).copy()
 
 
+def decode_stereo(path, sr=44100) -> np.ndarray:
+    """Any audio file -> (2, samples) float32 at `sr`."""
+    cmd = ["ffmpeg", "-v", "error", "-i", str(path), "-f", "f32le", "-ac", "2",
+           "-ar", str(sr), "-"]
+    raw = subprocess.run(cmd, check=True, capture_output=True).stdout
+    return np.frombuffer(raw, dtype=np.float32).reshape(-1, 2).T.copy()
+
+
 def write_wav(path, audio: np.ndarray, sr=44100):
+    """Mono (n,) or stereo (2, n) float audio -> 16-bit WAV."""
     audio = np.clip(audio, -1.0, 1.0)
+    channels = 1 if audio.ndim == 1 else audio.shape[0]
+    if channels > 1:
+        audio = audio.T.reshape(-1)
     pcm = (audio * 32767).astype("<i2")
     with wave.open(str(path), "wb") as w:
-        w.setnchannels(1)
+        w.setnchannels(channels)
         w.setsampwidth(2)
         w.setframerate(sr)
         w.writeframes(pcm.tobytes())
 
 
 def encode_m4a(wav_path, out_path, start=0.0, duration=30.0, fade=0.6):
+    # keeps the WAV's channel count (mono piano, stereo instrumental)
     """Cut [start, start+duration], fade out, loudness-normalize, AAC 128k."""
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -32,7 +45,7 @@ def encode_m4a(wav_path, out_path, start=0.0, duration=30.0, fade=0.6):
     af = (f"afade=t=out:st={fade_start:.2f}:d={fade:.2f},"
           "loudnorm=I=-16:TP=-1.5:LRA=11")
     cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
-           "-i", str(wav_path), "-af", af, "-ar", "44100", "-ac", "1",
+           "-i", str(wav_path), "-af", af, "-ar", "44100",
            "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", str(out_path)]
     subprocess.run(cmd, check=True, capture_output=True)
     return out_path

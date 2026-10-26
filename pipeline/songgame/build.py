@@ -108,6 +108,8 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
     """Generate one or more piano versions for a song and keep the best."""
     sid = song["deezer_id"]
     mp3 = dz.download_preview(sid, lang_dir / "originals" / f"{sid}.mp3")
+    if cfg.get("method") == "instrumental":
+        return make_instrumental(song, mp3, lang_dir, generator, cfg, log)
     gen_audio = A.decode(mp3, GEN_SR)
     ref_audio = A.decode(mp3, SCORE_SR)
     best = None
@@ -149,6 +151,29 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
     return song
 
 
+def make_instrumental(song, mp3, lang_dir, maker, cfg, log=print):
+    """Real recording without vocals, starting at the chorus."""
+    sid = song["deezer_id"]
+    t0 = time.time()
+    with tempfile.TemporaryDirectory() as tmp:
+        wav = Path(tmp) / "inst.wav"
+        start = maker(mp3, wav)
+        clip = lang_dir / "piano" / f"{sid}.m4a"
+        A.encode_m4a(wav, clip, start, cfg.get("clip_seconds", 30), fade=0.8)
+    info = maker.last_info
+    log(f"    instrumental from {start:.1f}s ({time.time()-t0:.0f}s) {info}")
+    for k in ("score", "composer", "tried_composers", "arrangement"):
+        song.pop(k, None)
+    song.update({
+        "piano_file": f"piano/{sid}.m4a",        # (field name kept for the app)
+        "piano_offset_sec": start,
+        "method": "instrumental",
+        "info": info,
+        "status": "ok",
+    })
+    return song
+
+
 def clip_start(notes, clip_len=30.0):
     """Start where the singing starts (that's what people recognize), unless
     that leaves too short a clip; otherwise start at the first note."""
@@ -159,8 +184,8 @@ def clip_start(notes, clip_len=30.0):
 
 
 def _pick_composers(song, n, cfg):
-    if cfg.get("method", "melody") == "melody":
-        return ["melody"]
+    if cfg.get("method", "melody") in ("melody", "instrumental"):
+        return [cfg.get("method", "melody")]
     tried = set(song.get("tried_composers", []))
     pool = [c for c in cfg.get("composers") or COMPOSERS if c not in tried] or COMPOSERS
     rng = random.Random(song["deezer_id"] + len(tried))
@@ -190,7 +215,11 @@ def build(cfg, lang, out_dir, limit=None, variants=None, ids=None, generator=Non
         return manifest
 
     if generator is None:
-        if cfg.get("method", "melody") == "melody":
+        if cfg.get("method") == "instrumental":
+            log("Loading the vocal separation model (first run downloads it)...")
+            from .melody import InstrumentalMaker
+            generator = InstrumentalMaker(cfg.get("device", "auto"), cfg.get("demucs_model", "htdemucs_ft"))
+        elif cfg.get("method", "melody") == "melody":
             log("Loading the vocal separation model (first run downloads it)...")
             from .melody import MelodyArranger
             generator = MelodyArranger(cfg.get("device", "auto"), cfg.get("target_bpm", 100),

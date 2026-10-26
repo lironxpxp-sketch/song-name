@@ -196,6 +196,23 @@ def test_end_to_end():
         man = json.loads((d / "out" / "he" / "manifest.json").read_text())
         assert man["count"] == 2 and man["songs"][0]["deezer_id"] == 100
 
+        # instrumental method: real audio minus vocals, from the chorus
+        class FakeMaker:
+            def __call__(self, mp3, wav_out):
+                st = A.decode(mp3, 44100)
+                A.write_wav(wav_out, np.stack([st, st * 0.5]), 44100)
+                self.last_info = {"source_offset": 4.5, "tempo": 120, "vocal_level": 0.1}
+                return 4.5
+        cfg_i = dict(cfg, method="instrumental")
+        m = B.build(cfg_i, "he", d / "out", ids=[200], generator=FakeMaker(), dz=dz, log=logs.append)
+        s = m[200]
+        assert s["method"] == "instrumental" and s["piano_offset_sec"] == 4.5 and "score" not in s
+        clip = d / "out" / "he" / s["piano_file"]
+        out = subprocess.run(["ffmpeg", "-i", clip], capture_output=True, text=True).stderr
+        assert "stereo" in out, out
+        dur = len(A.decode(clip, 22050)) / 22050
+        assert 21.5 < dur < 22.2, dur                                     # 26.5 s source - 4.5 s
+
         page = B.review("he", d / "out")
         assert "Chart Song 0" in page.read_text() and "originals/100.mp3" in page.read_text()
 

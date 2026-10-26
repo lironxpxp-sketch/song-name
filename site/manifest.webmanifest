@@ -1,6 +1,6 @@
 {
-  "name": "Piano Guess",
-  "short_name": "Piano Guess",
+  "name": "Guess the Song",
+  "short_name": "Guess the Song",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

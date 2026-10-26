@@ -5,10 +5,10 @@ const AUTO_NEXT = 12;      // seconds on the reveal screen before the next song
 
 const T = {
   en: {
-    title: "Piano Guess", sub: "Hear the hit as piano. Name it as fast as you can.",
+    title: "Guess the Song", sub: "Hear the hit without the vocals. Name it as fast as you can.",
     start: "Start", ready: "{n} songs ready", loading: "Loading songs…",
     none: "Songs are still being made. Check back soon.",
-    how: "<b>How to play:</b> you hear 2 seconds of a hit played on piano. Tap <b>+2 sec</b> to hear more. Say the song name out loud, or type it. Fewer seconds = more points.",
+    how: "<b>How to play:</b> you hear 2 seconds of a hit with the singing removed. Tap <b>+2 sec</b> to hear more. Say the song name out loud, or type it. Fewer seconds = more points.",
     sec: "<b>{n}</b> sec", more: "+2 sec", giveUp: "Give up", placeholder: "Type the song name…",
     listening: "Listening…", heard: "“{t}” – not it", notIt: "Not it – try again",
     correct: "Correct!", missed: "The song was", next: "Next song", nextIn: "Next song ({n})",
@@ -20,10 +20,10 @@ const T = {
     playReal: "▶ Play the real song", offline: "Couldn't load songs. Check your connection.",
   },
   he: {
-    title: "נחש את השיר", sub: "שומעים את הלהיט בפסנתר. מנחשים כמה שיותר מהר.",
+    title: "נחש את השיר", sub: "שומעים את הלהיט בלי השירה. מנחשים כמה שיותר מהר.",
     start: "התחל", ready: "{n} שירים מוכנים", loading: "טוען שירים…",
     none: "השירים עוד בהכנה. נסו שוב בקרוב.",
-    how: "<b>איך משחקים:</b> שומעים 2 שניות של להיט בפסנתר. לוחצים <b>+2 שנ׳</b> כדי לשמוע עוד. אומרים את שם השיר בקול או מקלידים. פחות שניות = יותר נקודות.",
+    how: "<b>איך משחקים:</b> שומעים 2 שניות של להיט בלי השירה. לוחצים <b>+2 שנ׳</b> כדי לשמוע עוד. אומרים את שם השיר בקול או מקלידים. פחות שניות = יותר נקודות.",
     sec: "<b>{n}</b> שנ׳", more: "+2 שנ׳", giveUp: "ויתרתי", placeholder: "הקלידו את שם השיר…",
     listening: "מקשיב…", heard: "„{t}” – לא זה", notIt: "לא זה – נסו שוב",
     correct: "נכון!", missed: "השיר היה", next: "לשיר הבא", nextIn: "לשיר הבא ({n})",

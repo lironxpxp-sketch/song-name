@@ -1,6 +1,7 @@
 {
   "clip_seconds": 30,
-  "method": "melody",
+  "method": "instrumental",
+  "demucs_model": "htdemucs_ft",
   "target_bpm": 100,
   "variants_per_song": 3,
   "min_score": 0.45,

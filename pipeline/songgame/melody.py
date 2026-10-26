@@ -356,3 +356,43 @@ class MelodyArranger:
                           "source_offset": start, "melody_notes": len(mel),
                           "voiced": round(float(np.mean(voiced)), 3)}
         return notes
+
+
+# ---------------------------------------------------------------------------
+# Instrumental: the real recording with the vocals removed
+# ---------------------------------------------------------------------------
+class InstrumentalMaker:
+    """Removes the singing with Demucs and picks the chorus. Sounds like the real
+    song (because it is), minus the words that would give the answer away."""
+
+    def __init__(self, device="cpu", model="htdemucs_ft"):
+        import torch
+        from demucs.pretrained import get_model
+
+        self.torch = torch
+        self.model = get_model(model)
+        self.model.eval()
+        self.device = "cuda" if device == "auto" and torch.cuda.is_available() else "cpu"
+
+    def __call__(self, mp3_path, wav_out):
+        from demucs.apply import apply_model
+        from scipy.signal import resample_poly
+
+        sr = self.model.samplerate
+        wav = self.torch.tensor(A.decode_stereo(mp3_path, sr))
+        ref = wav.mean(0)
+        mean, std = ref.mean(), ref.std() + 1e-8
+        with self.torch.no_grad():
+            out = apply_model(self.model, ((wav - mean) / std)[None], device=self.device,
+                              progress=False)[0]
+        stems = {n: (s * std + mean).numpy() for n, s in zip(self.model.sources, out)}
+        inst = sum(v for k, v in stems.items() if k != "vocals")
+        mono = lambda x: resample_poly(x.mean(0), 1, 2) if sr == 44100 else x.mean(0)
+        period, phase = estimate_beat(mono(stems["drums"]))
+        start = find_chorus(mono(inst), mono(stems["vocals"]), SR, period, phase)
+        peak = np.abs(inst).max() or 1.0
+        A.write_wav(wav_out, inst / peak * 0.95, sr)
+        voc = np.sqrt((stems["vocals"] ** 2).mean()) / (np.sqrt((inst ** 2).mean()) + 1e-9)
+        self.last_info = {"source_offset": start, "tempo": round(60 / period),
+                          "vocal_level": round(float(voc), 3)}
+        return start

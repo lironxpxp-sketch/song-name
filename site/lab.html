@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Piano Lab</title>
+<title>Song Lab</title>
 <meta name="theme-color" content="#14121c">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -19,7 +19,7 @@ h1{font-size:26px;margin:8px 0 4px} p{color:var(--dim);margin:0 0 14px;line-heig
 .head{display:flex;gap:12px;align-items:center}
 .head img{width:52px;height:52px;border-radius:8px;object-fit:cover;background:var(--panel2)}
 .head b{display:block;font-size:16px} .head small{color:var(--dim)}
-.btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
 .btns button{font:inherit;font-size:14px;font-weight:600;border:0;border-radius:10px;padding:11px 4px;
   background:var(--panel2);color:var(--ink)}
 .btns button.playing{background:var(--gold);color:#1b1608}
@@ -30,8 +30,8 @@ a{color:var(--gold)}
 </head>
 <body>
 <main>
-  <h1>Piano Lab</h1>
-  <p>Compare each song: the <b>old</b> piano version, the <b>new</b> one, and the <b>real</b> song (same part). Each plays 8 seconds. <a href="./">← Back to the game</a></p>
+  <h1>Song Lab</h1>
+  <p>Each song: the <b>game clip</b> (no vocals) and the <b>real</b> song, same part. Each plays 8 seconds. <a href="./">← Back to the game</a></p>
   <div class="tabs"><button data-l="he" class="on">עברית</button><button data-l="en">English</button></div>
   <div id="list"></div>
 </main>
@@ -72,13 +72,14 @@ async function load(lang) {
     const c = document.createElement("div");
     c.className = "card";
     c.innerHTML = `<div class="head"><img alt=""><div><b></b><small></small></div></div>
-      <div class="btns"><button data-k="old">Old</button><button data-k="new">New</button><button data-k="real">Real</button></div>
+      <div class="btns"><button data-k="old" hidden>Old</button><button data-k="new">Game clip</button><button data-k="real">Real</button></div>
       <div class="meta"></div>`;
     c.querySelector("img").src = s.cover || "";
     c.querySelector("b").textContent = s.title;
     c.querySelector("small").textContent = s.artist;
     const a = s.arrangement;
-    c.querySelector(".meta").textContent = (s.method || "pop2piano") +
+    c.querySelector(".meta").textContent = (s.method || "") +
+      (s.info ? ` · chorus at ${s.info.source_offset}s · ${s.info.tempo} bpm` : "") +
       (a ? ` · ${a.melody_notes} melody notes · ${a.tempo} bpm` : "") +
       (s.status === "needs_review" ? " · ⚠️ needs review" : "");
     const [bOld, bNew, bReal] = c.querySelectorAll("button");
