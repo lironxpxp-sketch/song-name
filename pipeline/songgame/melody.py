@@ -82,9 +82,13 @@ def estimate_key(chroma_frames):
     return best[1], best[2]
 
 
-def snap_to_key(notes, tonic, mode):
+def snap_to_key(notes, tonic, mode, max_len=0.2):
+    """Fix short off-key notes (pitch-tracker slips on slides and consonants).
+    Long notes are trusted as sung, so a wrong key guess can't bend the tune."""
     scale = {(tonic + s) % 12 for s in (MAJOR_SCALE if mode == "major" else MINOR_SCALE)}
     for nt in notes:
+        if nt.end - nt.start > max_len:
+            continue
         if nt.pitch % 12 not in scale:
             down, up = nt.pitch - 1, nt.pitch + 1
             nt.pitch = down if down % 12 in scale else up

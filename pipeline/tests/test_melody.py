@@ -51,8 +51,8 @@ def test_key_and_snap():
     assert M.estimate_key(c) == (0, "major"), M.estimate_key(c)
     am = A.chroma(synth_piano(chords([[57, 60, 64], [52, 56, 59], [57, 60, 64], [50, 53, 57]]), SR), SR, hop=1024)
     assert M.estimate_key(am) == (9, "minor"), M.estimate_key(am)
-    notes = [Note(0, 1, 61), Note(1, 2, 66), Note(2, 3, 60)]
-    assert [n.pitch for n in M.snap_to_key(notes, 0, "major")] == [60, 65, 60]
+    notes = [Note(0, 0.1, 61), Note(1, 1.15, 66), Note(2, 3, 60), Note(3, 4, 61)]
+    assert [n.pitch for n in M.snap_to_key(notes, 0, "major")] == [60, 65, 60, 61]
     mel = M.place_octave([Note(0, 1, 52), Note(1, 2, 55)])
     assert 66 <= np.median([n.pitch for n in mel]) <= 78
 
