@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "generated_at": "2026-10-26T11:25:42",
+  "generated_at": "2026-10-26T12:40:35",
   "count": 10,
   "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
   "songs": [
@@ -17,21 +17,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/908604612.m4a",
-      "piano_offset_sec": 12.95,
-      "score": 0.841,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 14.18,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "5",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 14.18,
         "tempo": 86,
-        "stretch": 1.0,
-        "source_offset": 12.78,
-        "melody_notes": 28,
-        "voiced": 0.841
+        "vocal_level": 0.453
       }
     },
     {
@@ -47,21 +39,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/139470659.m4a",
-      "piano_offset_sec": 15.31,
-      "score": 0.793,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 2.03,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "1m",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 2.03,
         "tempo": 128,
-        "stretch": 1.28,
-        "source_offset": 15.15,
-        "melody_notes": 32,
-        "voiced": 0.793
+        "vocal_level": 1.014
       }
     },
     {
@@ -78,20 +62,12 @@
       ],
       "piano_file": "piano/66506871.m4a",
       "piano_offset_sec": 13.7,
-      "score": 0.879,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "7m",
-        "tempo": 124,
-        "stretch": 1.24,
+      "method": "instrumental",
+      "info": {
         "source_offset": 13.7,
-        "melody_notes": 31,
-        "voiced": 0.879
+        "tempo": 124,
+        "vocal_level": 0.619
       }
     },
     {
@@ -107,21 +83,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/1703487577.m4a",
-      "piano_offset_sec": 0.38,
-      "score": 0.824,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 11.15,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "2",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 11.15,
         "tempo": 87,
-        "stretch": 1.0,
-        "source_offset": 0.11,
-        "melody_notes": 48,
-        "voiced": 0.824
+        "vocal_level": 0.658
       }
     },
     {
@@ -137,21 +105,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/582143242.m4a",
-      "piano_offset_sec": 0.2,
-      "score": 0.722,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 0.21,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "5m",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 0.21,
         "tempo": 110,
-        "stretch": 1.1,
-        "source_offset": 0.2,
-        "melody_notes": 50,
-        "voiced": 0.722
+        "vocal_level": 1.038
       }
     },
     {
@@ -167,21 +127,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/528330441.m4a",
-      "piano_offset_sec": 7.04,
-      "score": 0.661,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 6.08,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "10m",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 6.08,
         "tempo": 125,
-        "stretch": 1.25,
-        "source_offset": 7.04,
-        "melody_notes": 39,
-        "voiced": 0.661
+        "vocal_level": 0.687
       }
     },
     {
@@ -197,21 +149,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/3128096.m4a",
-      "piano_offset_sec": 0.8,
-      "score": 0.785,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 0.48,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "11",
-        "tempo": 87,
-        "stretch": 1.0,
+      "method": "instrumental",
+      "info": {
         "source_offset": 0.48,
-        "melody_notes": 31,
-        "voiced": 0.785
+        "tempo": 87,
+        "vocal_level": 0.598
       }
     },
     {
@@ -227,21 +171,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/2801558052.m4a",
-      "piano_offset_sec": 10.71,
-      "score": 0.908,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 11.85,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "9",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 11.85,
         "tempo": 105,
-        "stretch": 1.05,
-        "source_offset": 10.71,
-        "melody_notes": 38,
-        "voiced": 0.908
+        "vocal_level": 0.466
       }
     },
     {
@@ -257,21 +193,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/2947516331.m4a",
-      "piano_offset_sec": 0.09,
-      "score": 0.872,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 0.1,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "9",
+      "method": "instrumental",
+      "info": {
+        "source_offset": 0.1,
         "tempo": 105,
-        "stretch": 1.054,
-        "source_offset": 0.09,
-        "melody_notes": 42,
-        "voiced": 0.872
+        "vocal_level": 0.914
       }
     },
     {
@@ -287,21 +215,13 @@
         "Hand-picked"
       ],
       "piano_file": "piano/4350411742.m4a",
-      "piano_offset_sec": 3.22,
-      "score": 0.799,
-      "composer": "melody",
-      "tried_composers": [
-        "melody"
-      ],
+      "piano_offset_sec": 3.05,
       "status": "ok",
-      "method": "melody",
-      "arrangement": {
-        "key": "6",
-        "tempo": 133,
-        "stretch": 1.329,
+      "method": "instrumental",
+      "info": {
         "source_offset": 3.05,
-        "melody_notes": 43,
-        "voiced": 0.799
+        "tempo": 133,
+        "vocal_level": 0.479
       }
     }
   ]

@@ -56,82 +56,57 @@ ok test_beat
 ok test_accompaniment_and_start
   chorus at 12.0
 ok test_chorus_stretch_tidy
-::group::he
-    ✓ עומר אדם - מלכת הדור  ->  Omer Adam - מלכת הדור
-    ✓ נדב חנציס - אם את כבר הולכת  ->  נדב חנציס - אם את כבר הולכת
-    ✓ נדב חנציס - קאט לדבר הבא  ->  נדב חנציס - קאט לדבר הבא
-    ✓ רואי אדם - אבי הטחול  ->  רואי אדם - אבי הטחול
-    ✓ אופק אדנק - נתתי לך בית  ->  אופק אדנק - נתתי לך בית
-    ✓ Omer Adam - תל אביב  ->  Omer Adam - תל אביב
-    ! not found on Deezer: Shlomo Artzi - תרחיק
-    ✓ Arik Einstein - אני ואתה  ->  Arik Einstein - אני ואתה
-    ✓ Idan Raichel - ממעמקים  ->  The Idan Raichel Project - ממעמקים (Live)
-    ✓ Static & Ben El - Tudo Bom  ->  Static & Ben El Tavori - Tudo Bom
-    ✓ Shlomo Artzi - ירח  ->  Shlomo Artzi - ירח
-    ✓ Arik Einstein - אוהב להיות בבית  ->  Arik Einstein - אוהב להיות בבית
-    ✓ Kaveret - יו יה  ->  Kaveret - יו יה
-  Hand-picked: 12 tracks
-12 unique songs saved for 'he'
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/f7e0c4bc-ba3fe64a.th" to /home/runner/.cache/torch/hub/checkpoints/f7e0c4bc-ba3fe64a.th
 Loading the vocal separation model (first run downloads it)...
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  1%|          | 1.00M/80.2M [00:00<00:08, 10.3MB/s] 13%|█▎        | 10.6M/80.2M [00:00<00:01, 63.2MB/s] 56%|█████▋    | 45.2M/80.2M [00:00<00:00, 199MB/s] 100%|██████████| 80.2M/80.2M [00:00<00:00, 215MB/s]
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/d12395a8-e57c48e6.th" to /home/runner/.cache/torch/hub/checkpoints/d12395a8-e57c48e6.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  1%|          | 1.00M/80.2M [00:00<00:08, 9.73MB/s] 12%|█▏        | 9.75M/80.2M [00:00<00:01, 55.8MB/s] 64%|██████▍   | 51.5M/80.2M [00:00<00:00, 226MB/s] 100%|██████████| 80.2M/80.2M [00:00<00:00, 215MB/s]
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/92cfc3b6-ef3bcb9c.th" to /home/runner/.cache/torch/hub/checkpoints/92cfc3b6-ef3bcb9c.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  1%|▏         | 1.12M/80.2M [00:00<00:07, 11.5MB/s] 19%|█▊        | 14.9M/80.2M [00:00<00:00, 88.7MB/s] 66%|██████▋   | 53.2M/80.2M [00:00<00:00, 231MB/s] 100%|██████████| 80.2M/80.2M [00:00<00:00, 235MB/s]
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/04573f0d-f3cf25b2.th" to /home/runner/.cache/torch/hub/checkpoints/04573f0d-f3cf25b2.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  1%|▏         | 1.12M/80.2M [00:00<00:07, 11.5MB/s] 14%|█▍        | 11.4M/80.2M [00:00<00:01, 67.3MB/s] 71%|███████   | 57.1M/80.2M [00:00<00:00, 254MB/s] 100%|██████████| 80.2M/80.2M [00:00<00:00, 241MB/s]
 [1/10] Omer Adam - מלכת הדור
-    melody: 151 notes, score 0.851 (45s) {'key': '5', 'tempo': 125, 'stretch': 1.253, 'source_offset': 5.18, 'melody_notes': 35, 'voiced': 0.851}
+    instrumental from 5.2s (75s) {'source_offset': 5.18, 'tempo': 125, 'vocal_level': 0.847}
 [2/10] נדב חנציס - אם את כבר הולכת
-    melody: 148 notes, score 0.944 (21s) {'key': '2m', 'tempo': 62, 'stretch': 1.0, 'source_offset': 0.22, 'melody_notes': 63, 'voiced': 0.944}
+    instrumental from 8.4s (69s) {'source_offset': 8.39, 'tempo': 63, 'vocal_level': 1.201}
 [3/10] נדב חנציס - קאט לדבר הבא
-    melody: 119 notes, score 0.796 (21s) {'key': '2', 'tempo': 102, 'stretch': 1.02, 'source_offset': 9.73, 'melody_notes': 51, 'voiced': 0.796}
+    instrumental from 9.8s (69s) {'source_offset': 9.85, 'tempo': 103, 'vocal_level': 0.828}
 [4/10] רואי אדם - אבי הטחול
-    melody: 129 notes, score 0.845 (21s) {'key': '10', 'tempo': 87, 'stretch': 1.0, 'source_offset': 5.75, 'melody_notes': 50, 'voiced': 0.845}
+    instrumental from 5.8s (70s) {'source_offset': 5.75, 'tempo': 87, 'vocal_level': 0.703}
 [5/10] אופק אדנק - נתתי לך בית
-    melody: 168 notes, score 0.833 (21s) {'key': '7m', 'tempo': 141, 'stretch': 1.35, 'source_offset': 0.12, 'melody_notes': 42, 'voiced': 0.833}
+    instrumental from 2.5s (70s) {'source_offset': 2.48, 'tempo': 62, 'vocal_level': 0.74}
 [6/10] Omer Adam - תל אביב
-    melody: 163 notes, score 0.889 (21s) {'key': '10', 'tempo': 130, 'stretch': 1.3, 'source_offset': 5.79, 'melody_notes': 53, 'voiced': 0.889}
+    instrumental from 5.8s (70s) {'source_offset': 5.79, 'tempo': 130, 'vocal_level': 0.669}
 [7/10] Arik Einstein - אני ואתה
-    melody: 110 notes, score 0.836 (21s) {'key': '4m', 'tempo': 135, 'stretch': 1.35, 'source_offset': 15.19, 'melody_notes': 30, 'voiced': 0.836}
+    instrumental from 6.3s (71s) {'source_offset': 6.33, 'tempo': 135, 'vocal_level': 0.592}
 [8/10] The Idan Raichel Project - ממעמקים
-    melody: 160 notes, score 0.886 (21s) {'key': '11m', 'tempo': 120, 'stretch': 1.199, 'source_offset': 9.03, 'melody_notes': 33, 'voiced': 0.886}
+    instrumental from 7.0s (71s) {'source_offset': 7.02, 'tempo': 120, 'vocal_level': 0.728}
 [9/10] Static & Ben El Tavori - Tudo Bom
-    melody: 129 notes, score 0.728 (21s) {'key': '4', 'tempo': 130, 'stretch': 1.3, 'source_offset': 2.8, 'melody_notes': 34, 'voiced': 0.728}
+    instrumental from 10.2s (71s) {'source_offset': 10.19, 'tempo': 130, 'vocal_level': 0.826}
 [10/10] Shlomo Artzi - ירח
-    melody: 167 notes, score 0.758 (21s) {'key': '5m', 'tempo': 173, 'stretch': 1.35, 'source_offset': 9.11, 'melody_notes': 29, 'voiced': 0.758}
+    instrumental from 5.6s (71s) {'source_offset': 5.56, 'tempo': 132, 'vocal_level': 0.95}
 Done. Listen: python -m songgame review --lang he
-::endgroup::
-::group::en
-    ✓ The Weeknd - Blinding Lights  ->  The Weeknd - Blinding Lights
-    ✓ Ed Sheeran - Shape of You  ->  Ed Sheeran - Shape of You
-    ✓ The Neighbourhood - Sweater Weather  ->  The Neighbourhood - Sweater Weather
-    ✓ Harry Styles - As It Was  ->  Harry Styles - As It Was
-    ✓ Lewis Capaldi - Someone You Loved  ->  Lewis Capaldi - Someone You Loved
-    ✓ Imagine Dragons - Believer  ->  Imagine Dragons - Believer
-    ✓ Coldplay - Yellow  ->  Coldplay - Yellow
-    ✓ Billie Eilish - BIRDS OF A FEATHER  ->  Billie Eilish - BIRDS OF A FEATHER
-    ✓ Lady Gaga - Die With A Smile  ->  Lady Gaga - Die With A Smile
-    ✓ Tate McRae - Housewife  ->  Tate McRae - Housewife
-    ✓ Lord Huron - The Night We Met  ->  Lord Huron - The Night We Met
-    ✓ Glass Animals - Heat Waves  ->  Glass Animals - Heat Waves
-  Hand-picked: 12 tracks
-12 unique songs saved for 'en'
 Loading the vocal separation model (first run downloads it)...
 [1/10] The Weeknd - Blinding Lights
-    melody: 83 notes, score 0.841 (29s) {'key': '5', 'tempo': 86, 'stretch': 1.0, 'source_offset': 12.78, 'melody_notes': 28, 'voiced': 0.841}
+    instrumental from 14.2s (76s) {'source_offset': 14.18, 'tempo': 86, 'vocal_level': 0.453}
 [2/10] Ed Sheeran - Shape of You
-    melody: 109 notes, score 0.793 (21s) {'key': '1m', 'tempo': 128, 'stretch': 1.28, 'source_offset': 15.15, 'melody_notes': 32, 'voiced': 0.793}
+    instrumental from 2.0s (71s) {'source_offset': 2.03, 'tempo': 128, 'vocal_level': 1.014}
 [3/10] The Neighbourhood - Sweater Weather
-    melody: 115 notes, score 0.879 (21s) {'key': '7m', 'tempo': 124, 'stretch': 1.24, 'source_offset': 13.7, 'melody_notes': 31, 'voiced': 0.879}
+    instrumental from 13.7s (71s) {'source_offset': 13.7, 'tempo': 124, 'vocal_level': 0.619}
 [4/10] Harry Styles - As It Was
-    melody: 179 notes, score 0.824 (21s) {'key': '2', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.11, 'melody_notes': 48, 'voiced': 0.824}
+    instrumental from 11.2s (70s) {'source_offset': 11.15, 'tempo': 87, 'vocal_level': 0.658}
 [5/10] Lewis Capaldi - Someone You Loved
-    melody: 155 notes, score 0.722 (21s) {'key': '5m', 'tempo': 110, 'stretch': 1.1, 'source_offset': 0.2, 'melody_notes': 50, 'voiced': 0.722}
+    instrumental from 0.2s (69s) {'source_offset': 0.21, 'tempo': 110, 'vocal_level': 1.038}
 [6/10] Imagine Dragons - Believer
-    melody: 124 notes, score 0.661 (21s) {'key': '10m', 'tempo': 125, 'stretch': 1.25, 'source_offset': 7.04, 'melody_notes': 39, 'voiced': 0.661}
+    instrumental from 6.1s (70s) {'source_offset': 6.08, 'tempo': 125, 'vocal_level': 0.687}
 [7/10] Coldplay - Yellow
-    melody: 127 notes, score 0.785 (20s) {'key': '11', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.48, 'melody_notes': 31, 'voiced': 0.785}
+    instrumental from 0.5s (71s) {'source_offset': 0.48, 'tempo': 87, 'vocal_level': 0.598}
 [8/10] Billie Eilish - BIRDS OF A FEATHER
-    melody: 98 notes, score 0.908 (19s) {'key': '9', 'tempo': 105, 'stretch': 1.05, 'source_offset': 10.71, 'melody_notes': 38, 'voiced': 0.908}
+    instrumental from 11.8s (72s) {'source_offset': 11.85, 'tempo': 105, 'vocal_level': 0.466}
 [9/10] Lady Gaga - Die With A Smile
-    melody: 162 notes, score 0.872 (20s) {'key': '9', 'tempo': 105, 'stretch': 1.054, 'source_offset': 0.09, 'melody_notes': 42, 'voiced': 0.872}
+    instrumental from 0.1s (74s) {'source_offset': 0.1, 'tempo': 105, 'vocal_level': 0.914}
 [10/10] Tate McRae - Housewife
-    melody: 167 notes, score 0.799 (19s) {'key': '6', 'tempo': 133, 'stretch': 1.329, 'source_offset': 3.05, 'melody_notes': 43, 'voiced': 0.799}
+    instrumental from 3.0s (71s) {'source_offset': 3.05, 'tempo': 133, 'vocal_level': 0.479}
 Done. Listen: python -m songgame review --lang en
-::endgroup::
 he 10 songs
 en 10 songs
