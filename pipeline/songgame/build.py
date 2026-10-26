@@ -41,6 +41,16 @@ def collect(cfg, lang, out_dir, dz: Deezer = None, log=print):
         try:
             if src["type"] == "chart":
                 tracks = dz.chart_tracks(limit, src.get("genre_id", 0))
+            elif src["type"] == "songs":
+                tracks = []
+                for item in src["songs"][:limit]:
+                    artist, _, title = item.partition(" - ")
+                    hit = dz.search_track(artist.strip(), title.strip())
+                    if hit:
+                        tracks.append(hit)
+                        log(f"    ✓ {item}  ->  {hit['artist']['name']} - {hit['title']}")
+                    else:
+                        log(f"    ! not found on Deezer: {item}")
             elif src["type"] == "playlist":
                 tracks = dz.playlist_tracks(src["playlist_id"], limit)
             elif src["type"] == "playlist_search":
@@ -107,8 +117,11 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
             notes = generator(gen_audio, GEN_SR, comp)
             wav = Path(tmp) / f"{comp}.wav"
             render(notes, wav, cfg.get("soundfont"))
-            s = score(ref_audio, A.decode(wav, SCORE_SR), notes, SCORE_SR)
             info = getattr(generator, "last_info", None)
+            if info and "source_offset" in info:
+                s = info["voiced"]          # cut/slowed clip: harmony score no longer lines up
+            else:
+                s = score(ref_audio, A.decode(wav, SCORE_SR), notes, SCORE_SR)
             log(f"    {comp}: {len(notes)} notes, score {s:.3f} ({time.time()-t0:.0f}s)"
                 + (f" {info}" if info else ""))
             if best is None or s > best[0]:
@@ -119,7 +132,7 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
         A.encode_m4a(wav, clip, start, cfg.get("clip_seconds", 30))
     song.update({
         "piano_file": f"piano/{sid}.m4a",
-        "piano_offset_sec": round(start, 2),   # where the clip starts in the preview
+        "piano_offset_sec": round(start, 2),   # where the clip starts in the real preview
         "score": s,
         "composer": comp,
         "tried_composers": sorted(set(song.get("tried_composers", [])) | set(composers)),
@@ -129,6 +142,8 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
     info = getattr(generator, "last_info", None)
     if info:
         song["arrangement"] = info
+        if "source_offset" in info:
+            song["piano_offset_sec"] = round(info["source_offset"] + start / info.get("stretch", 1), 2)
         if info.get("melody_notes", 99) < 12:
             song["status"] = "needs_review"      # hardly any singing found
     return song
@@ -178,7 +193,8 @@ def build(cfg, lang, out_dir, limit=None, variants=None, ids=None, generator=Non
         if cfg.get("method", "melody") == "melody":
             log("Loading the vocal separation model (first run downloads it)...")
             from .melody import MelodyArranger
-            generator = MelodyArranger(cfg.get("device", "auto"))
+            generator = MelodyArranger(cfg.get("device", "auto"), cfg.get("target_bpm", 100),
+                                       cfg.get("clip_seconds", 30))
         else:
             log("Loading Pop2Piano (first run downloads the model)...")
             from .piano import Pop2PianoGenerator

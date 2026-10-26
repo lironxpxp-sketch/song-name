@@ -72,6 +72,15 @@ class Deezer:
     def playlist_tracks(self, playlist_id, limit=100):
         return self._paged(f"/playlist/{playlist_id}/tracks", limit)
 
+    def search_track(self, artist, title):
+        """Best Deezer match for an artist + title (exact fields first, then loose)."""
+        for q in (f'artist:"{artist}" track:"{title}"', f"{artist} {title}"):
+            hits = [t for t in self.get("/search", q=q, limit=10).get("data", [])
+                    if t.get("readable", True) and t.get("preview")]
+            if hits:
+                return hits[0]
+        return None
+
     def track(self, track_id):
         return self.get(f"/track/{track_id}")
 

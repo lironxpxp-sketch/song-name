@@ -110,6 +110,11 @@ class FakeSession:
         if path == "/search/playlist" and self.quota_once:   # simulate quota hit
             self.quota_once = False
             return FakeResp({"error": {"code": 4, "message": "Quota limit exceeded"}})
+        if path == "/search":
+            q = (params or {}).get("q", "")
+            if "Nobody" in q:
+                return FakeResp({"data": []})
+            return FakeResp({"data": [{**make_tracks("Searched", 1, 700)[0], "preview": "x"}]})
         if path.startswith("/track/"):
             return FakeResp({"id": int(path.split("/")[-1]), "preview": "https://cdn/x.mp3"})
         return FakeResp({"data": self.data[path]})
@@ -159,6 +164,12 @@ def test_end_to_end():
         assert songs[0]["title"] == "Chart Song 0" and songs[0]["answers"][0] == "Chart Song 0"
         assert any("[id 8]" in l for l in logs), logs                 # picked Deezer's list
         assert any("broken" in l and "network down" in l for l in logs)
+
+        cfg2 = {"languages": {"he": {"sources": [{"type": "songs", "label": "picked",
+                 "songs": ["Artist - Song", "Nobody - Nothing"]}]}}}
+        picked = B.collect(cfg2, "he", d / "tmp", dz, log=logs.append)
+        assert [p["deezer_id"] for p in picked] == [700]
+        assert any("not found on Deezer: Nobody - Nothing" in l for l in logs)
 
         m = B.build(cfg, "he", d / "out", limit=2, variants=3,
                     generator=fake_generator, dz=dz, log=logs.append)

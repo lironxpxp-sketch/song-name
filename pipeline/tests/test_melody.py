@@ -98,6 +98,36 @@ def test_accompaniment_and_start():
     assert clip_start(late) == 0.0
 
 
+def test_chorus_stretch_tidy():
+    # quiet verse 0-12 s, loud sung chorus from 12 s
+    sr = SR
+    t = np.arange(int(30 * sr)) / sr
+    mix = np.sin(2 * np.pi * 220 * t) * np.where(t < 12, 0.15, 0.8)
+    vocals = np.sin(2 * np.pi * 440 * t) * np.where((t > 3) & (t < 9), 0.1, 0) \
+        + np.sin(2 * np.pi * 440 * t) * np.where(t >= 12, 0.6, 0)
+    start = M.find_chorus(mix, vocals, sr, period=0.5, phase=0.0)
+    print("  chorus at", start)
+    assert 11.0 <= start <= 12.0, start
+
+    notes = [Note(10, 11, 60, 90, "melody"), Note(11.9, 12.5, 64, 90, "melody"),
+             Note(12.5, 13, 65, 90, "melody"), Note(11.5, 14, 48, 50, "chord")]
+    cut = M.cut_and_stretch(notes, 12.0, 1.25, 30)
+    got = [(round(n.start, 3), round(n.end, 3), n.pitch) for n in cut]
+    assert got == [(0.0, 0.625, 64), (0.625, 1.25, 65), (0.0, 2.5, 48)], got   # 10 s note dropped
+    assert M.stretch_for(140) == 1.35 and M.stretch_for(90) == 1.0 and M.stretch_for(120) == 1.2
+
+    mel = [Note(0, 0.5, 60), Note(0.45, 1.0, 62), Note(1.0, 1.05, 70), Note(1.1, 1.6, 62),
+           Note(1.65, 2.0, 62)]
+    tidy = M.tidy_melody(mel)
+    assert [n.pitch for n in tidy] == [60, 62], [(n.start, n.pitch) for n in tidy]
+    assert all(a.end <= b.start for a, b in zip(tidy, tidy[1:]))
+
+    acc = M.accompaniment([(0.0, 8.0, 0, "")], 0.5, 0.0, 8.0, melody_low=67)
+    hits = sorted({round(n.start, 2) for n in acc if n.role == "chord"})
+    assert hits == [0.01, 1.01, 2.01, 3.01, 4.01, 5.01, 6.01, 7.01], hits       # every 2 beats
+    assert max(n.pitch for n in acc) <= 64
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):

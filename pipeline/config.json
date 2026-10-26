@@ -1,33 +1,53 @@
 {
   "clip_seconds": 30,
   "method": "melody",
+  "target_bpm": 100,
   "variants_per_song": 3,
   "min_score": 0.45,
   "device": "auto",
   "soundfont": null,
   "composers": null,
-
   "languages": {
     "en": {
       "sources": [
-        { "type": "chart", "label": "Deezer Global Top", "max_tracks": 50 },
-        { "type": "playlist_search", "query": "Top Worldwide", "max_tracks": 50 },
-        { "type": "playlist_search", "query": "Top USA", "max_tracks": 50 },
-        { "type": "playlist_search", "query": "Best of 2010s", "max_tracks": 60 },
-        { "type": "playlist_search", "query": "Best of 2000s", "max_tracks": 60 },
-        { "type": "playlist_search", "query": "Best of 90s", "max_tracks": 60 },
-        { "type": "playlist_search", "query": "Best of 80s", "max_tracks": 60 },
-        { "type": "playlist_search", "query": "Best of 70s", "max_tracks": 40 },
-        { "type": "playlist_search", "query": "Best of 60s", "max_tracks": 30 }
+        {
+          "type": "songs",
+          "label": "Hand-picked",
+          "max_tracks": 100,
+          "songs": [
+            "The Weeknd - Blinding Lights",
+            "Ed Sheeran - Shape of You",
+            "The Neighbourhood - Sweater Weather",
+            "Harry Styles - As It Was",
+            "Lewis Capaldi - Someone You Loved",
+            "Imagine Dragons - Believer",
+            "Coldplay - Yellow",
+            "Billie Eilish - BIRDS OF A FEATHER",
+            "Lady Gaga - Die With A Smile",
+            "Tate McRae - Housewife"
+          ]
+        }
       ]
     },
     "he": {
       "sources": [
-        { "type": "playlist_search", "query": "Top Israel", "max_tracks": 50 },
-        { "type": "playlist_search", "query": "Israeli Hits", "max_tracks": 80 },
-        { "type": "playlist_search", "query": "Israeli Classics", "max_tracks": 80 },
-        { "type": "playlist_search", "query": "להיטים ישראליים", "max_tracks": 80, "creator_contains": "" },
-        { "type": "playlist_search", "query": "שירים ישראליים קלאסיים", "max_tracks": 80, "creator_contains": "" }
+        {
+          "type": "songs",
+          "label": "Hand-picked",
+          "max_tracks": 100,
+          "songs": [
+            "עומר אדם - מלכת הדור",
+            "נדב חנציס - אם את כבר הולכת",
+            "נדב חנציס - קאט לדבר הבא",
+            "רואי אדם - אבי הטחול",
+            "אופק אדנק - נתתי לך בית",
+            "Omer Adam - תל אביב",
+            "Shlomo Artzi - תרחיק",
+            "Arik Einstein - אני ואתה",
+            "Idan Raichel - ממעמקים",
+            "Static & Ben El - Tudo Bom"
+          ]
+        }
       ]
     }
   }

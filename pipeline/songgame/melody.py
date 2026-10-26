@@ -196,34 +196,105 @@ def detect_chords(chroma_frames, hop_s, switch_penalty=0.12, min_dur=0.45):
     return [(a * hop_s, b * hop_s, names[k][0], names[k][1]) for a, b, k in out if k >= 0]
 
 
-def accompaniment(chords, period, phase, end_time, melody_low=64):
-    """Bass on every other beat, chord on every beat, kept below the melody."""
+def accompaniment(chords, period, phase, end_time, melody_low=64, beats_per_chord=2):
+    """Sparse left hand: bass note each bar, chord every `beats_per_chord` beats,
+    kept well below the melody so the tune stays clear."""
     notes = []
-    top = min(66, melody_low - 2)
+    top = min(64, melody_low - 3)
+    step = period * beats_per_chord
     for (start, end, root, q) in chords:
         tones = [(root + i) % 12 for i in ((0, 4, 7) if q == "" else (0, 3, 7))]
         chord = sorted(top - ((top - pc) % 12) for pc in tones)            # close voicing
         bass = 40 + ((root - 4) % 12)                                       # E2..D#3
-        k = int(np.ceil((start - phase) / period))
-        beats = [phase + i * period for i in range(k, int((end - phase) / period) + 1)]
-        beats = [b for b in beats if start - 1e-6 <= b < end] or [start]
-        for i, b in enumerate(beats):
-            dur = min(period * 0.95, end - b, end_time - b)
-            if dur <= 0.05:
+        k = int(np.ceil((start - phase) / step))
+        hits = [phase + i * step for i in range(k, int((end - phase) / step) + 1)]
+        hits = [h for h in hits if start - 1e-6 <= h < end]
+        if not hits or hits[0] - start > period * 0.75:                   # chord change between hits
+            hits = [start] + hits
+        for i, h in enumerate(hits):
+            dur = min(step * 0.97, end - h, end_time - h)
+            if dur <= 0.08:
                 continue
-            strong = (i % 2 == 0)
-            if strong:
-                notes.append(Note(b, b + min(period * 1.9, end - b), bass, 64, "bass"))
+            if i % 2 == 0:
+                notes.append(Note(h, h + min(step * 1.95, end - h), bass, 58, "bass"))
             for p in chord:
-                notes.append(Note(b + 0.01, b + dur, p, 52 if strong else 40, "chord"))
+                notes.append(Note(h + 0.012, h + dur, p, 44, "chord"))
     return notes
+
+
+def tidy_melody(notes, min_dur=0.12, gap=0.03):
+    """One clean line: no overlaps, no tiny blips, repeated pitches joined."""
+    notes = sorted(notes, key=lambda n: n.start)
+    out = []
+    for n in notes:
+        if out and n.pitch == out[-1].pitch and n.start - out[-1].end < 0.12:
+            out[-1].end = max(out[-1].end, n.end)
+            continue
+        out.append(n)
+    kept = []
+    for n in (n for n in out if n.end - n.start >= min_dur):   # drop blips, then re-join
+        if kept and n.pitch == kept[-1].pitch and n.start - kept[-1].end < 0.2:
+            kept[-1].end = max(kept[-1].end, n.end)
+        else:
+            kept.append(n)
+    out = kept
+    for a, b in zip(out, out[1:]):
+        a.end = min(a.end, b.start - gap) if b.start - gap > a.start + 0.05 else a.end
+    return out
+
+
+def find_chorus(mix, vocals, sr=SR, period=0.5, phase=0.0, min_len=14.0):
+    """Start time (s) of the most chorus-like part: loud, full, sung, and
+    entered with a lift in energy. Snapped to a bar line."""
+    hop = int(0.1 * sr)
+    def rms(x):
+        n = len(x) // hop
+        return np.sqrt((x[: n * hop].reshape(n, hop) ** 2).mean(axis=1) + 1e-12)
+    e, v = rms(mix), rms(vocals)
+    e, v = e / (e.max() + 1e-12), v / (v.max() + 1e-12)
+    total = len(e) * 0.1
+    bar = period * 4
+    best, best_t = -1.0, 0.0
+    t = phase % bar
+    win, look = int(8 / 0.1), int(2 / 0.1)
+    while t <= total - min_len + 1e-6:
+        i = int(round(t / 0.1))
+        body = e[i:i + win].mean() + 0.6 * (v[i:i + win] > 0.15).mean()
+        before = e[max(0, i - look):i].mean() if i > 0 else e[i:i + look].mean()
+        lift = max(0.0, e[i:i + look].mean() - before)
+        score = body + 0.8 * lift
+        if score > best:
+            best, best_t = score, t
+        t += bar / 2                                          # half-bar candidates
+    return round(best_t, 2)
+
+
+def cut_and_stretch(notes, start, stretch, length):
+    """Keep notes from `start` on, move them to t=0 and slow down by `stretch`."""
+    out = []
+    for n in notes:
+        if n.end <= start:
+            continue
+        s0 = max(n.start, start)
+        if s0 - n.start > 0.15 and n.role == "melody":       # half-cut note: skip
+            continue
+        a, b = (s0 - start) * stretch, (n.end - start) * stretch
+        if a >= length:
+            continue
+        out.append(Note(a, min(b, length), n.pitch, n.velocity, n.role))
+    return out
+
+
+def stretch_for(tempo, target=100.0, max_stretch=1.35):
+    """How much to slow a song down: fast songs get calmer, slow ones untouched."""
+    return round(float(np.clip(tempo / target, 1.0, max_stretch)), 3)
 
 
 # ---------------------------------------------------------------------------
 # Full pipeline (needs torch + demucs + librosa; run in the cloud workflow)
 # ---------------------------------------------------------------------------
 class MelodyArranger:
-    def __init__(self, device="cpu"):
+    def __init__(self, device="cpu", target_bpm=100, clip_seconds=30):
         import torch
         from demucs.pretrained import get_model
 
@@ -231,6 +302,8 @@ class MelodyArranger:
         self.model = get_model("htdemucs")
         self.model.eval()
         self.device = "cuda" if device == "auto" and torch.cuda.is_available() else "cpu"
+        self.target_bpm = target_bpm
+        self.clip_seconds = clip_seconds
 
     def separate(self, mono, sr):
         from demucs.apply import apply_model
@@ -266,13 +339,20 @@ class MelodyArranger:
         harmony = stems["other"] + stems["bass"]
         chroma = A.chroma(harmony, SR, n_fft=4096, hop=1024)
         tonic, mode = estimate_key(chroma)
-        melody = place_octave(snap_to_key(melody, tonic, mode))
+        melody = tidy_melody(place_octave(snap_to_key(melody, tonic, mode)))
         chords = detect_chords(chroma, 1024 / SR)
         period, phase = estimate_beat(stems["drums"])
         end = len(vocals) / SR
         low = min((n.pitch for n in melody), default=64)
         notes = melody + accompaniment(chords, period, phase, end, low)
+
+        mix = sum(stems.values())
+        start = find_chorus(mix, vocals, SR, period, phase)
+        stretch = stretch_for(60 / period, self.target_bpm)
+        notes = cut_and_stretch(notes, start, stretch, self.clip_seconds)
+        mel = [n for n in notes if n.role == "melody"]
         self.last_info = {"key": f"{tonic}{'' if mode == 'major' else 'm'}",
-                          "tempo": round(60 / period), "melody_notes": len(melody),
-                          "voiced": float(np.mean(voiced))}
+                          "tempo": round(60 / period), "stretch": stretch,
+                          "source_offset": start, "melody_notes": len(mel),
+                          "voiced": round(float(np.mean(voiced)), 3)}
         return notes
