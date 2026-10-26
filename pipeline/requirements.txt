@@ -1,0 +1,11 @@
+# Installed by the "Make piano clips" GitHub workflow (Python 3.11, CPU-only torch)
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy<2
+scipy
+requests
+torch>=2.2,<2.9
+transformers>=4.31,<5
+librosa
+pretty-midi
+essentia
+resampy

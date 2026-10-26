@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+# Original Deezer previews are only used while making clips; never published.
+site/data/*/originals/
+site/data/*/review.html

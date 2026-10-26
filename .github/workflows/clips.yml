@@ -1,0 +1,102 @@
+name: Make piano clips
+
+on:
+  workflow_dispatch:
+    inputs:
+      songs:
+        description: "Library size per language (total songs, new ones are added)"
+        default: "10"
+      languages:
+        description: "Languages (he, en or both)"
+        type: choice
+        options: ["he en", "he", "en"]
+        default: "he en"
+      variants:
+        description: "Piano styles to try per song (more = better, slower)"
+        default: "2"
+      redo_ids:
+        description: "Optional: Deezer IDs to regenerate, comma-separated (only these are done)"
+        default: ""
+      redo_lang:
+        description: "Language of the IDs above"
+        type: choice
+        options: ["he", "en"]
+        default: "he"
+
+permissions:
+  contents: write
+
+concurrency: clips
+
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      SONGGAME_SOUNDFONT: /usr/share/sounds/sf2/FluidR3_GM.sf2
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Install audio tools
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg fluidsynth fluid-soundfont-gm
+
+      - name: Install Python packages
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Cache the Pop2Piano model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: pop2piano-v1
+
+      - name: Self-test
+        working-directory: pipeline
+        run: python tests/test_offline.py
+
+      - name: Make clips
+        working-directory: pipeline
+        env:
+          SONGS: ${{ inputs.songs }}
+          LANGS: ${{ inputs.languages }}
+          VARIANTS: ${{ inputs.variants }}
+          REDO_IDS: ${{ inputs.redo_ids }}
+          REDO_LANG: ${{ inputs.redo_lang }}
+        run: |
+          if [ -n "$REDO_IDS" ]; then
+            python -m songgame --out ../site/data build --lang "$REDO_LANG" --ids "$REDO_IDS" --variants "$VARIANTS"
+          else
+            for lang in $LANGS; do
+              echo "::group::$lang"
+              python -m songgame --out ../site/data collect --lang "$lang"
+              python -m songgame --out ../site/data build --lang "$lang" --limit "$SONGS" --variants "$VARIANTS"
+              echo "::endgroup::"
+            done
+          fi
+          for lang in he en; do
+            [ -f "../site/data/$lang/manifest.json" ] && \
+              python -c "import json,sys;m=json.load(open(sys.argv[1]));print(sys.argv[2], m['count'], 'songs')" "../site/data/$lang/manifest.json" "$lang"
+          done
+
+      - name: Save clips to the repository
+        run: |
+          git config user.name "piano-clips-bot"
+          git config user.email "piano-clips-bot@users.noreply.github.com"
+          git add site/data
+          git diff --cached --quiet && { echo "No new clips"; exit 0; }
+          git commit -q -m "Add piano clips"
+          git pull -q --rebase origin "${GITHUB_REF_NAME}"
+          git push -q
+
+  publish:
+    needs: clips
+    uses: ./.github/workflows/publish.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

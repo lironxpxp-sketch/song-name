@@ -1,0 +1,33 @@
+{
+  "clip_seconds": 30,
+  "variants_per_song": 3,
+  "min_score": 0.45,
+  "device": "auto",
+  "soundfont": null,
+  "composers": null,
+
+  "languages": {
+    "en": {
+      "sources": [
+        { "type": "chart", "label": "Deezer Global Top", "max_tracks": 50 },
+        { "type": "playlist_search", "query": "Top Worldwide", "max_tracks": 50 },
+        { "type": "playlist_search", "query": "Top USA", "max_tracks": 50 },
+        { "type": "playlist_search", "query": "Best of 2010s", "max_tracks": 60 },
+        { "type": "playlist_search", "query": "Best of 2000s", "max_tracks": 60 },
+        { "type": "playlist_search", "query": "Best of 90s", "max_tracks": 60 },
+        { "type": "playlist_search", "query": "Best of 80s", "max_tracks": 60 },
+        { "type": "playlist_search", "query": "Best of 70s", "max_tracks": 40 },
+        { "type": "playlist_search", "query": "Best of 60s", "max_tracks": 30 }
+      ]
+    },
+    "he": {
+      "sources": [
+        { "type": "playlist_search", "query": "Top Israel", "max_tracks": 50 },
+        { "type": "playlist_search", "query": "Israeli Hits", "max_tracks": 80 },
+        { "type": "playlist_search", "query": "Israeli Classics", "max_tracks": 80 },
+        { "type": "playlist_search", "query": "להיטים ישראליים", "max_tracks": 80, "creator_contains": "" },
+        { "type": "playlist_search", "query": "שירים ישראליים קלאסיים", "max_tracks": 80, "creator_contains": "" }
+      ]
+    }
+  }
+}
