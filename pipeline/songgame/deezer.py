@@ -73,13 +73,39 @@ class Deezer:
         return self._paged(f"/playlist/{playlist_id}/tracks", limit)
 
     def search_track(self, artist, title):
-        """Best Deezer match for an artist + title (exact fields first, then loose)."""
-        for q in (f'artist:"{artist}" track:"{title}"', f"{artist} {title}"):
-            hits = [t for t in self.get("/search", q=q, limit=10).get("data", [])
-                    if t.get("readable", True) and t.get("preview")]
-            if hits:
-                return hits[0]
-        return None
+        """Best Deezer match for an artist + title. The title must really match
+        (no 'similar' results), and studio versions beat live/remix ones."""
+        from .names import normalize
+        want_t, want_a = normalize(title), normalize(artist)
+        seen, cands = set(), []
+        for q in (f'artist:"{artist}" track:"{title}"', f"{artist} {title}", title):
+            for t in self.get("/search", q=q, limit=25).get("data", []):
+                if t["id"] in seen or not t.get("readable", True) or not t.get("preview"):
+                    continue
+                seen.add(t["id"])
+                cands.append(t)
+        best, best_score = None, 0.0
+        for rank, t in enumerate(cands):
+            got = normalize(t.get("title_short") or t.get("title", ""))
+            full = normalize(t.get("title", ""))
+            if got == want_t:
+                sc = 3.0
+            elif got.startswith(want_t) or want_t.startswith(got):
+                sc = 2.0
+            elif want_t in full:
+                sc = 1.0
+            else:
+                continue
+            a = normalize(t.get("artist", {}).get("name", ""))
+            if want_a and (want_a in a or a in want_a or set(want_a.split()) & set(a.split())):
+                sc += 2.0
+            if any(w in full for w in ("live", "remix", "acoustic", "karaoke", "instrumental",
+                                       "cover", "sped up", "slowed", "version", "גרסת", "הופעה", "לייב")):
+                sc -= 1.5
+            sc -= rank * 0.01
+            if sc > best_score:
+                best, best_score = t, sc
+        return best if best_score >= 2.5 else None
 
     def track(self, track_id):
         return self.get(f"/track/{track_id}")
