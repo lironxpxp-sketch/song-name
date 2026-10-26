@@ -63,33 +63,36 @@ ok test_chorus_stretch_tidy
     ✓ רואי אדם - אבי הטחול  ->  רואי אדם - אבי הטחול
     ✓ אופק אדנק - נתתי לך בית  ->  אופק אדנק - נתתי לך בית
     ✓ Omer Adam - תל אביב  ->  Omer Adam - תל אביב
-    ✓ Shlomo Artzi - תרחיק  ->  Shlomo Artzi - תרקוד (גרסת שלמה והאנדלוסים)
+    ! not found on Deezer: Shlomo Artzi - תרחיק
     ✓ Arik Einstein - אני ואתה  ->  Arik Einstein - אני ואתה
     ✓ Idan Raichel - ממעמקים  ->  The Idan Raichel Project - ממעמקים (Live)
     ✓ Static & Ben El - Tudo Bom  ->  Static & Ben El Tavori - Tudo Bom
-  Hand-picked: 10 tracks
-10 unique songs saved for 'he'
+    ✓ Shlomo Artzi - ירח  ->  Shlomo Artzi - ירח
+    ✓ Arik Einstein - אוהב להיות בבית  ->  Arik Einstein - אוהב להיות בבית
+    ✓ Kaveret - יו יה  ->  Kaveret - יו יה
+  Hand-picked: 12 tracks
+12 unique songs saved for 'he'
 Loading the vocal separation model (first run downloads it)...
 [1/10] Omer Adam - מלכת הדור
-    melody: 134 notes, score 0.824 (39s) {'key': '5', 'tempo': 132, 'stretch': 1.316, 'source_offset': 5.91, 'melody_notes': 32, 'voiced': 0.824}
+    melody: 151 notes, score 0.851 (45s) {'key': '5', 'tempo': 125, 'stretch': 1.253, 'source_offset': 5.18, 'melody_notes': 35, 'voiced': 0.851}
 [2/10] נדב חנציס - אם את כבר הולכת
-    melody: 147 notes, score 0.943 (19s) {'key': '2m', 'tempo': 62, 'stretch': 1.0, 'source_offset': 0.22, 'melody_notes': 62, 'voiced': 0.943}
+    melody: 148 notes, score 0.944 (21s) {'key': '2m', 'tempo': 62, 'stretch': 1.0, 'source_offset': 0.22, 'melody_notes': 63, 'voiced': 0.944}
 [3/10] נדב חנציס - קאט לדבר הבא
-    melody: 115 notes, score 0.769 (18s) {'key': '11m', 'tempo': 102, 'stretch': 1.02, 'source_offset': 9.73, 'melody_notes': 50, 'voiced': 0.769}
+    melody: 119 notes, score 0.796 (21s) {'key': '2', 'tempo': 102, 'stretch': 1.02, 'source_offset': 9.73, 'melody_notes': 51, 'voiced': 0.796}
 [4/10] רואי אדם - אבי הטחול
-    melody: 129 notes, score 0.855 (18s) {'key': '10', 'tempo': 87, 'stretch': 1.0, 'source_offset': 5.75, 'melody_notes': 51, 'voiced': 0.855}
+    melody: 129 notes, score 0.845 (21s) {'key': '10', 'tempo': 87, 'stretch': 1.0, 'source_offset': 5.75, 'melody_notes': 50, 'voiced': 0.845}
 [5/10] אופק אדנק - נתתי לך בית
-    melody: 167 notes, score 0.838 (18s) {'key': '7m', 'tempo': 141, 'stretch': 1.35, 'source_offset': 0.12, 'melody_notes': 41, 'voiced': 0.838}
+    melody: 168 notes, score 0.833 (21s) {'key': '7m', 'tempo': 141, 'stretch': 1.35, 'source_offset': 0.12, 'melody_notes': 42, 'voiced': 0.833}
 [6/10] Omer Adam - תל אביב
-    melody: 152 notes, score 0.886 (18s) {'key': '10', 'tempo': 130, 'stretch': 1.3, 'source_offset': 5.79, 'melody_notes': 51, 'voiced': 0.886}
-[7/10] Shlomo Artzi - תרקוד
-    melody: 92 notes, score 0.561 (18s) {'key': '5m', 'tempo': 118, 'stretch': 1.18, 'source_offset': 14.38, 'melody_notes': 27, 'voiced': 0.561}
-[8/10] Arik Einstein - אני ואתה
-    melody: 109 notes, score 0.839 (18s) {'key': '4m', 'tempo': 135, 'stretch': 1.35, 'source_offset': 15.19, 'melody_notes': 29, 'voiced': 0.839}
-[9/10] The Idan Raichel Project - ממעמקים
-    melody: 161 notes, score 0.893 (18s) {'key': '11m', 'tempo': 120, 'stretch': 1.199, 'source_offset': 9.03, 'melody_notes': 34, 'voiced': 0.893}
-[10/10] Static & Ben El Tavori - Tudo Bom
-    melody: 128 notes, score 0.728 (18s) {'key': '4', 'tempo': 130, 'stretch': 1.3, 'source_offset': 2.8, 'melody_notes': 33, 'voiced': 0.728}
+    melody: 163 notes, score 0.889 (21s) {'key': '10', 'tempo': 130, 'stretch': 1.3, 'source_offset': 5.79, 'melody_notes': 53, 'voiced': 0.889}
+[7/10] Arik Einstein - אני ואתה
+    melody: 110 notes, score 0.836 (21s) {'key': '4m', 'tempo': 135, 'stretch': 1.35, 'source_offset': 15.19, 'melody_notes': 30, 'voiced': 0.836}
+[8/10] The Idan Raichel Project - ממעמקים
+    melody: 160 notes, score 0.886 (21s) {'key': '11m', 'tempo': 120, 'stretch': 1.199, 'source_offset': 9.03, 'melody_notes': 33, 'voiced': 0.886}
+[9/10] Static & Ben El Tavori - Tudo Bom
+    melody: 129 notes, score 0.728 (21s) {'key': '4', 'tempo': 130, 'stretch': 1.3, 'source_offset': 2.8, 'melody_notes': 34, 'voiced': 0.728}
+[10/10] Shlomo Artzi - ירח
+    melody: 167 notes, score 0.758 (21s) {'key': '5m', 'tempo': 173, 'stretch': 1.35, 'source_offset': 9.11, 'melody_notes': 29, 'voiced': 0.758}
 Done. Listen: python -m songgame review --lang he
 ::endgroup::
 ::group::en
@@ -97,35 +100,37 @@ Done. Listen: python -m songgame review --lang he
     ✓ Ed Sheeran - Shape of You  ->  Ed Sheeran - Shape of You
     ✓ The Neighbourhood - Sweater Weather  ->  The Neighbourhood - Sweater Weather
     ✓ Harry Styles - As It Was  ->  Harry Styles - As It Was
-    ✓ Lewis Capaldi - Someone You Loved  ->  Lewis Capaldi - Someone You Loved (Future Humans Remix)
+    ✓ Lewis Capaldi - Someone You Loved  ->  Lewis Capaldi - Someone You Loved
     ✓ Imagine Dragons - Believer  ->  Imagine Dragons - Believer
     ✓ Coldplay - Yellow  ->  Coldplay - Yellow
     ✓ Billie Eilish - BIRDS OF A FEATHER  ->  Billie Eilish - BIRDS OF A FEATHER
-    ✓ Lady Gaga - Die With A Smile  ->  Bad Bunny - Super Bowl LX Halftime Show (Live)
+    ✓ Lady Gaga - Die With A Smile  ->  Lady Gaga - Die With A Smile
     ✓ Tate McRae - Housewife  ->  Tate McRae - Housewife
-  Hand-picked: 10 tracks
-10 unique songs saved for 'en'
+    ✓ Lord Huron - The Night We Met  ->  Lord Huron - The Night We Met
+    ✓ Glass Animals - Heat Waves  ->  Glass Animals - Heat Waves
+  Hand-picked: 12 tracks
+12 unique songs saved for 'en'
 Loading the vocal separation model (first run downloads it)...
 [1/10] The Weeknd - Blinding Lights
-    melody: 82 notes, score 0.834 (26s) {'key': '5', 'tempo': 86, 'stretch': 1.0, 'source_offset': 12.78, 'melody_notes': 27, 'voiced': 0.834}
+    melody: 83 notes, score 0.841 (29s) {'key': '5', 'tempo': 86, 'stretch': 1.0, 'source_offset': 12.78, 'melody_notes': 28, 'voiced': 0.841}
 [2/10] Ed Sheeran - Shape of You
-    melody: 108 notes, score 0.784 (18s) {'key': '1m', 'tempo': 128, 'stretch': 1.28, 'source_offset': 15.15, 'melody_notes': 31, 'voiced': 0.784}
+    melody: 109 notes, score 0.793 (21s) {'key': '1m', 'tempo': 128, 'stretch': 1.28, 'source_offset': 15.15, 'melody_notes': 32, 'voiced': 0.793}
 [3/10] The Neighbourhood - Sweater Weather
-    melody: 116 notes, score 0.872 (18s) {'key': '7m', 'tempo': 124, 'stretch': 1.24, 'source_offset': 13.7, 'melody_notes': 32, 'voiced': 0.872}
+    melody: 115 notes, score 0.879 (21s) {'key': '7m', 'tempo': 124, 'stretch': 1.24, 'source_offset': 13.7, 'melody_notes': 31, 'voiced': 0.879}
 [4/10] Harry Styles - As It Was
-    melody: 181 notes, score 0.835 (18s) {'key': '2', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.11, 'melody_notes': 51, 'voiced': 0.835}
+    melody: 179 notes, score 0.824 (21s) {'key': '2', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.11, 'melody_notes': 48, 'voiced': 0.824}
 [5/10] Lewis Capaldi - Someone You Loved
-    melody: 142 notes, score 0.831 (18s) {'key': '10m', 'tempo': 124, 'stretch': 1.24, 'source_offset': 9.74, 'melody_notes': 32, 'voiced': 0.831}
+    melody: 155 notes, score 0.722 (21s) {'key': '5m', 'tempo': 110, 'stretch': 1.1, 'source_offset': 0.2, 'melody_notes': 50, 'voiced': 0.722}
 [6/10] Imagine Dragons - Believer
-    melody: 125 notes, score 0.675 (18s) {'key': '10m', 'tempo': 125, 'stretch': 1.25, 'source_offset': 7.04, 'melody_notes': 40, 'voiced': 0.675}
+    melody: 124 notes, score 0.661 (21s) {'key': '10m', 'tempo': 125, 'stretch': 1.25, 'source_offset': 7.04, 'melody_notes': 39, 'voiced': 0.661}
 [7/10] Coldplay - Yellow
-    melody: 125 notes, score 0.761 (18s) {'key': '11', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.48, 'melody_notes': 29, 'voiced': 0.761}
+    melody: 127 notes, score 0.785 (20s) {'key': '11', 'tempo': 87, 'stretch': 1.0, 'source_offset': 0.48, 'melody_notes': 31, 'voiced': 0.785}
 [8/10] Billie Eilish - BIRDS OF A FEATHER
-    melody: 98 notes, score 0.908 (18s) {'key': '9', 'tempo': 105, 'stretch': 1.05, 'source_offset': 10.71, 'melody_notes': 38, 'voiced': 0.908}
-[9/10] Bad Bunny - Super Bowl LX Halftime Show
-    melody: 160 notes, score 0.587 (18s) {'key': '2m', 'tempo': 133, 'stretch': 1.333, 'source_offset': 1.21, 'melody_notes': 35, 'voiced': 0.587}
+    melody: 98 notes, score 0.908 (19s) {'key': '9', 'tempo': 105, 'stretch': 1.05, 'source_offset': 10.71, 'melody_notes': 38, 'voiced': 0.908}
+[9/10] Lady Gaga - Die With A Smile
+    melody: 162 notes, score 0.872 (20s) {'key': '9', 'tempo': 105, 'stretch': 1.054, 'source_offset': 0.09, 'melody_notes': 42, 'voiced': 0.872}
 [10/10] Tate McRae - Housewife
-    melody: 164 notes, score 0.798 (18s) {'key': '6', 'tempo': 133, 'stretch': 1.329, 'source_offset': 3.05, 'melody_notes': 40, 'voiced': 0.798}
+    melody: 167 notes, score 0.799 (19s) {'key': '6', 'tempo': 133, 'stretch': 1.329, 'source_offset': 3.05, 'melody_notes': 43, 'voiced': 0.799}
 Done. Listen: python -m songgame review --lang en
 ::endgroup::
 he 10 songs

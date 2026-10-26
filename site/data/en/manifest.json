@@ -1,0 +1,308 @@
+{
+  "language": "en",
+  "generated_at": "2026-10-26T11:25:42",
+  "count": 10,
+  "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
+  "songs": [
+    {
+      "deezer_id": 908604612,
+      "title": "Blinding Lights",
+      "artist": "The Weeknd",
+      "answers": [
+        "Blinding Lights"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/fd00ebd6d30d7253f813dba3bb1c66a9/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/908604612",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/908604612.m4a",
+      "piano_offset_sec": 12.95,
+      "score": 0.841,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "5",
+        "tempo": 86,
+        "stretch": 1.0,
+        "source_offset": 12.78,
+        "melody_notes": 28,
+        "voiced": 0.841
+      }
+    },
+    {
+      "deezer_id": 139470659,
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "answers": [
+        "Shape of You"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/107c2b43f10c249077c1f7618563bb63/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/139470659",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/139470659.m4a",
+      "piano_offset_sec": 15.31,
+      "score": 0.793,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "1m",
+        "tempo": 128,
+        "stretch": 1.28,
+        "source_offset": 15.15,
+        "melody_notes": 32,
+        "voiced": 0.793
+      }
+    },
+    {
+      "deezer_id": 66506871,
+      "title": "Sweater Weather",
+      "artist": "The Neighbourhood",
+      "answers": [
+        "Sweater Weather"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6f55ff3cc5c478510c948024e95cf8d6/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/66506871",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/66506871.m4a",
+      "piano_offset_sec": 13.7,
+      "score": 0.879,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "7m",
+        "tempo": 124,
+        "stretch": 1.24,
+        "source_offset": 13.7,
+        "melody_notes": 31,
+        "voiced": 0.879
+      }
+    },
+    {
+      "deezer_id": 1703487577,
+      "title": "As It Was",
+      "artist": "Harry Styles",
+      "answers": [
+        "As It Was"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b0e936124f59e669ddba02ebe5893f95/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/1703487577",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/1703487577.m4a",
+      "piano_offset_sec": 0.38,
+      "score": 0.824,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "2",
+        "tempo": 87,
+        "stretch": 1.0,
+        "source_offset": 0.11,
+        "melody_notes": 48,
+        "voiced": 0.824
+      }
+    },
+    {
+      "deezer_id": 582143242,
+      "title": "Someone You Loved",
+      "artist": "Lewis Capaldi",
+      "answers": [
+        "Someone You Loved"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/9a49265adb09ef5c1ae4920f8420e5ae/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/582143242",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/582143242.m4a",
+      "piano_offset_sec": 0.2,
+      "score": 0.722,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "5m",
+        "tempo": 110,
+        "stretch": 1.1,
+        "source_offset": 0.2,
+        "melody_notes": 50,
+        "voiced": 0.722
+      }
+    },
+    {
+      "deezer_id": 528330441,
+      "title": "Believer",
+      "artist": "Imagine Dragons",
+      "answers": [
+        "Believer"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/247b228179aea3b083eef43522b78b45/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/528330441",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/528330441.m4a",
+      "piano_offset_sec": 7.04,
+      "score": 0.661,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "10m",
+        "tempo": 125,
+        "stretch": 1.25,
+        "source_offset": 7.04,
+        "melody_notes": 39,
+        "voiced": 0.661
+      }
+    },
+    {
+      "deezer_id": 3128096,
+      "title": "Yellow",
+      "artist": "Coldplay",
+      "answers": [
+        "Yellow"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/970dce98eeea6729244c0ae71707a83d/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3128096",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/3128096.m4a",
+      "piano_offset_sec": 0.8,
+      "score": 0.785,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "11",
+        "tempo": 87,
+        "stretch": 1.0,
+        "source_offset": 0.48,
+        "melody_notes": 31,
+        "voiced": 0.785
+      }
+    },
+    {
+      "deezer_id": 2801558052,
+      "title": "BIRDS OF A FEATHER",
+      "artist": "Billie Eilish",
+      "answers": [
+        "BIRDS OF A FEATHER"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5d284b31cb9ddeb1a0c79aede5a94e1c/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/2801558052",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/2801558052.m4a",
+      "piano_offset_sec": 10.71,
+      "score": 0.908,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "9",
+        "tempo": 105,
+        "stretch": 1.05,
+        "source_offset": 10.71,
+        "melody_notes": 38,
+        "voiced": 0.908
+      }
+    },
+    {
+      "deezer_id": 2947516331,
+      "title": "Die With A Smile",
+      "artist": "Lady Gaga",
+      "answers": [
+        "Die With A Smile"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4bd5903f4ce8f2601916bfadb44efe8a/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/2947516331",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/2947516331.m4a",
+      "piano_offset_sec": 0.09,
+      "score": 0.872,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "9",
+        "tempo": 105,
+        "stretch": 1.054,
+        "source_offset": 0.09,
+        "melody_notes": 42,
+        "voiced": 0.872
+      }
+    },
+    {
+      "deezer_id": 4350411742,
+      "title": "Housewife",
+      "artist": "Tate McRae",
+      "answers": [
+        "Housewife"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0717657c0f9540946fb9813d3383a500/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/4350411742",
+      "sources": [
+        "Hand-picked"
+      ],
+      "piano_file": "piano/4350411742.m4a",
+      "piano_offset_sec": 3.22,
+      "score": 0.799,
+      "composer": "melody",
+      "tried_composers": [
+        "melody"
+      ],
+      "status": "ok",
+      "method": "melody",
+      "arrangement": {
+        "key": "6",
+        "tempo": 133,
+        "stretch": 1.329,
+        "source_offset": 3.05,
+        "melody_notes": 43,
+        "voiced": 0.799
+      }
+    }
+  ]
+}
