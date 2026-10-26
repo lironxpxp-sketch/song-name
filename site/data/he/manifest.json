@@ -1,6 +1,6 @@
 {
   "language": "he",
-  "generated_at": "2026-10-26T08:44:05",
+  "generated_at": "2026-10-26T10:39:30",
   "count": 10,
   "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
   "songs": [
@@ -17,15 +17,23 @@
         "Top Israel"
       ],
       "piano_file": "piano/4264385032.m4a",
-      "piano_offset_sec": 0.76,
-      "score": 0.8765,
-      "composer": "composer19",
+      "piano_offset_sec": 0.0,
+      "score": 0.9101,
+      "composer": "melody",
       "tried_composers": [
         "composer18",
-        "composer19"
+        "composer19",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/4264385032.m4a"
+      "piano_v1_file": "piano_v1/4264385032.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "7m",
+        "tempo": 141,
+        "melody_notes": 72,
+        "voiced": 0.8391337973704563
+      }
     },
     {
       "deezer_id": 3267549311,
@@ -40,15 +48,23 @@
         "Israeli Hits"
       ],
       "piano_file": "piano/3267549311.m4a",
-      "piano_offset_sec": 0.48,
-      "score": 0.6873,
-      "composer": "composer20",
+      "piano_offset_sec": 0.0,
+      "score": 0.8447,
+      "composer": "melody",
       "tried_composers": [
         "composer20",
-        "composer6"
+        "composer6",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/3267549311.m4a"
+      "piano_v1_file": "piano_v1/3267549311.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "9m",
+        "tempo": 128,
+        "melody_notes": 109,
+        "voiced": 0.7476780185758514
+      }
     },
     {
       "deezer_id": 370967591,
@@ -63,15 +79,23 @@
         "להיטים ישראליים"
       ],
       "piano_file": "piano/370967591.m4a",
-      "piano_offset_sec": 0.33,
-      "score": 0.8156,
-      "composer": "composer20",
+      "piano_offset_sec": 0.0,
+      "score": 0.8352,
+      "composer": "melody",
       "tried_composers": [
         "composer10",
-        "composer20"
+        "composer20",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/370967591.m4a"
+      "piano_v1_file": "piano_v1/370967591.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "4",
+        "tempo": 130,
+        "melody_notes": 76,
+        "voiced": 0.7236842105263158
+      }
     },
     {
       "deezer_id": 4057555601,
@@ -86,15 +110,23 @@
         "Top Israel"
       ],
       "piano_file": "piano/4057555601.m4a",
-      "piano_offset_sec": 0.36,
-      "score": 0.8925,
-      "composer": "composer7",
+      "piano_offset_sec": 0.0,
+      "score": 0.9113,
+      "composer": "melody",
       "tried_composers": [
         "composer18",
-        "composer7"
+        "composer7",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/4057555601.m4a"
+      "piano_v1_file": "piano_v1/4057555601.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "9m",
+        "tempo": 107,
+        "melody_notes": 81,
+        "voiced": 0.8796439628482973
+      }
     },
     {
       "deezer_id": 3258684201,
@@ -109,15 +141,23 @@
         "Israeli Hits"
       ],
       "piano_file": "piano/3258684201.m4a",
-      "piano_offset_sec": 1.52,
-      "score": 0.7796,
-      "composer": "composer5",
+      "piano_offset_sec": 0.92,
+      "score": 0.813,
+      "composer": "melody",
       "tried_composers": [
         "composer5",
-        "composer8"
+        "composer8",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/3258684201.m4a"
+      "piano_v1_file": "piano_v1/3258684201.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "8m",
+        "tempo": 126,
+        "melody_notes": 76,
+        "voiced": 0.6288699690402477
+      }
     },
     {
       "deezer_id": 560948962,
@@ -132,15 +172,23 @@
         "להיטים ישראליים"
       ],
       "piano_file": "piano/560948962.m4a",
-      "piano_offset_sec": 0.19,
-      "score": 0.8652,
-      "composer": "composer17",
+      "piano_offset_sec": 0.0,
+      "score": 0.8431,
+      "composer": "melody",
       "tried_composers": [
         "composer1",
-        "composer17"
+        "composer17",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/560948962.m4a"
+      "piano_v1_file": "piano_v1/560948962.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "10m",
+        "tempo": 85,
+        "melody_notes": 83,
+        "voiced": 0.8370743034055728
+      }
     },
     {
       "deezer_id": 4086674521,
@@ -155,15 +203,23 @@
         "Top Israel"
       ],
       "piano_file": "piano/4086674521.m4a",
-      "piano_offset_sec": 0.57,
-      "score": 0.848,
-      "composer": "composer5",
+      "piano_offset_sec": 0.0,
+      "score": 0.8087,
+      "composer": "melody",
       "tried_composers": [
         "composer21",
-        "composer5"
+        "composer5",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/4086674521.m4a"
+      "piano_v1_file": "piano_v1/4086674521.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "10",
+        "tempo": 87,
+        "melody_notes": 84,
+        "voiced": 0.8475232198142415
+      }
     },
     {
       "deezer_id": 3197836191,
@@ -178,15 +234,23 @@
         "Israeli Hits"
       ],
       "piano_file": "piano/3197836191.m4a",
-      "piano_offset_sec": 0.26,
-      "score": 0.7877,
-      "composer": "composer13",
+      "piano_offset_sec": 0.0,
+      "score": 0.8724,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer13"
+        "composer13",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/3197836191.m4a"
+      "piano_v1_file": "piano_v1/3197836191.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "10",
+        "tempo": 128,
+        "melody_notes": 22,
+        "voiced": 0.20859133126934984
+      }
     },
     {
       "deezer_id": 634643492,
@@ -201,15 +265,23 @@
         "Israeli Classics"
       ],
       "piano_file": "piano/634643492.m4a",
-      "piano_offset_sec": 0.69,
-      "score": 0.7796,
-      "composer": "composer18",
+      "piano_offset_sec": 0.0,
+      "score": 0.8559,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer18"
+        "composer18",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/634643492.m4a"
+      "piano_v1_file": "piano_v1/634643492.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "9m",
+        "tempo": 75,
+        "melody_notes": 77,
+        "voiced": 0.8618421052631579
+      }
     },
     {
       "deezer_id": 109741492,
@@ -224,15 +296,23 @@
         "להיטים ישראליים"
       ],
       "piano_file": "piano/109741492.m4a",
-      "piano_offset_sec": 0.47,
-      "score": 0.8116,
-      "composer": "composer19",
+      "piano_offset_sec": 0.0,
+      "score": 0.8529,
+      "composer": "melody",
       "tried_composers": [
         "composer19",
-        "composer5"
+        "composer5",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/109741492.m4a"
+      "piano_v1_file": "piano_v1/109741492.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "8",
+        "tempo": 133,
+        "melody_notes": 90,
+        "voiced": 0.776702786377709
+      }
     }
   ]
 }

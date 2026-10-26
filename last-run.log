@@ -1,11 +1,11 @@
 Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 101.4 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 188.2 MB/s  0:00:00
 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
 Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 132.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 342.2 MB/s  0:00:00
 Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)
 Downloading soundfile-0.14.0-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 109.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 244.7 MB/s  0:00:00
 Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
 Downloading soxr-1.1.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
@@ -18,7 +18,7 @@ Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
 Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 131.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 291.1 MB/s  0:00:00
 Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
 Downloading openunmix-1.3.0-py3-none-any.whl (40 kB)
 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
@@ -29,7 +29,7 @@ Downloading treetable-0.2.6-py3-none-any.whl (7.4 kB)
 Building wheels for collected packages: demucs
   Building wheel for demucs (pyproject.toml): started
   Building wheel for demucs (pyproject.toml): finished with status 'done'
-  Created wheel for demucs: filename=demucs-4.0.1-py3-none-any.whl size=78480 sha256=8f550a8d1c775886eacc1d652674bb1a9b4a0d2803649f16717f5e50fb709f35
+  Created wheel for demucs: filename=demucs-4.0.1-py3-none-any.whl size=78480 sha256=37a4cf91439c43264b390de8e398be32a4e77487221fa4cf937a8ad64eb38112
   Stored in directory: /home/runner/.cache/pip/wheels/bb/06/a3/83489d50c9f015fa981a2a7bb08fcede75120a0de56775353f
 Successfully built demucs
 Installing collected packages: mpmath, urllib3, typing-extensions, treetable, tqdm, threadpoolctl, sympy, six, safetensors, retrying, regex, pyyaml, pycparser, platformdirs, packaging, numpy, networkx, narwhals, msgpack, MarkupSafe, llvmlite, lameenc, importlib_resources, idna, hf-xet, fsspec, filelock, einops, decorator, cloudpickle, charset_normalizer, certifi, audioread, submitit, soxr, scipy, requests, omegaconf, numba, mido, lazy_loader, joblib, jinja2, essentia, cffi, torch, soundfile, scikit-learn, resampy, pretty-midi, pooch, huggingface-hub, torchaudio, tokenizers, librosa, julius, dora-search, transformers, openunmix, demucs
@@ -42,16 +42,63 @@ ok test_names
 ok test_midi_file_is_valid
   score good=0.807 wrong-chords=0.440 empty=0.000
 ok test_score_prefers_correct_harmony
-Traceback (most recent call last):
-  File "/home/runner/work/song-name/song-name/pipeline/tests/test_offline.py", line 195, in <module>
-    fn()
-  File "/home/runner/work/song-name/song-name/pipeline/tests/test_offline.py", line 132, in test_end_to_end
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", d / "orig.wav", "-t", "30",
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/subprocess.py", line 548, in run
-    with Popen(*popenargs, **kwargs) as process:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/subprocess.py", line 1026, in __init__
-    self._execute_child(args, executable, preexec_fn, close_fds,
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/subprocess.py", line 1955, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: 'ffmpeg'
+  picked: composer1 0.8402 offset 0.85
+ok test_end_to_end
+  melody: [(0.5, 64), (1.0, 62), (1.5, 60), (3.0, 67)]
+ok test_f0_to_notes
+ok test_key_and_snap
+  chords: ['C', 'G', 'Am', 'F', 'C', 'G', 'Am', 'F'] [0.0, 1.9, 3.9, 5.9, 7.8, 9.8, 11.8, 13.9]
+ok test_chords
+  96 bpm -> 96.0 bpm, phase 0.19
+  120 bpm -> 119.9 bpm, phase 0.18
+  128 bpm -> 128.0 bpm, phase 0.20
+ok test_beat
+ok test_accompaniment_and_start
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th" to /home/runner/.cache/torch/hub/checkpoints/955717e8-8726e21a.th
+Loading the vocal separation model (first run downloads it)...
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  2%|▏         | 2.00M/80.2M [00:00<00:04, 19.9MB/s] 28%|██▊       | 22.2M/80.2M [00:00<00:00, 131MB/s]  78%|███████▊  | 62.4M/80.2M [00:00<00:00, 257MB/s]100%|██████████| 80.2M/80.2M [00:00<00:00, 241MB/s]
+[1/10] אופק אדנק - נתתי לך בית
+    melody: 313 notes, score 0.910 (46s) {'key': '7m', 'tempo': 141, 'melody_notes': 72, 'voiced': 0.8391337973704563}
+[2/10] סטילה - רשימת קניות
+    melody: 331 notes, score 0.845 (21s) {'key': '9m', 'tempo': 128, 'melody_notes': 109, 'voiced': 0.7476780185758514}
+[3/10] Static & Ben El Tavori - Tudo Bom
+    melody: 304 notes, score 0.835 (21s) {'key': '4', 'tempo': 130, 'melody_notes': 76, 'voiced': 0.7236842105263158}
+[4/10] John Michael Howell - Story of a Warrior
+    melody: 265 notes, score 0.911 (21s) {'key': '9m', 'tempo': 107, 'melody_notes': 81, 'voiced': 0.8796439628482973}
+[5/10] Odeya - חולמת
+    melody: 286 notes, score 0.813 (21s) {'key': '8m', 'tempo': 126, 'melody_notes': 76, 'voiced': 0.6288699690402477}
+[6/10] Eliad - מתוק כשמרלי
+    melody: 232 notes, score 0.843 (22s) {'key': '10m', 'tempo': 85, 'melody_notes': 83, 'voiced': 0.8370743034055728}
+[7/10] רואי אדם - אבי הטחול
+    melody: 242 notes, score 0.809 (21s) {'key': '10', 'tempo': 87, 'melody_notes': 84, 'voiced': 0.8475232198142415}
+[8/10] German Avny - I Want to Be
+    melody: 247 notes, score 0.872 (21s) {'key': '10', 'tempo': 128, 'melody_notes': 22, 'voiced': 0.20859133126934984}
+[9/10] להקת חופים - שירים עד כאן
+    melody: 213 notes, score 0.856 (21s) {'key': '9m', 'tempo': 75, 'melody_notes': 77, 'voiced': 0.8618421052631579}
+[10/10] Café Shahor Hazak - Ihiye Beseder
+    melody: 329 notes, score 0.853 (21s) {'key': '8', 'tempo': 133, 'melody_notes': 90, 'voiced': 0.776702786377709}
+Done. Listen: python -m songgame review --lang he
+Loading the vocal separation model (first run downloads it)...
+[1/10] Tame Impala - Dracula
+    melody: 279 notes, score 0.811 (28s) {'key': '10', 'tempo': 115, 'melody_notes': 76, 'voiced': 0.8289473684210527}
+[2/10] Morgan Wallen - Been By Now
+    melody: 287 notes, score 0.879 (21s) {'key': '2m', 'tempo': 116, 'melody_notes': 87, 'voiced': 0.8912538699690402}
+[3/10] Linkin Park - Shadow of the Day
+    melody: 235 notes, score 0.846 (21s) {'key': '6', 'tempo': 110, 'melody_notes': 34, 'voiced': 0.8734520123839009}
+[4/10] The Police - Every Breath You Take
+    melody: 285 notes, score 0.814 (21s) {'key': '2m', 'tempo': 117, 'melody_notes': 82, 'voiced': 0.7113003095975232}
+[5/10] Elton John - Rocket Man (I Think It's Going To Be A Long, Long Time)
+    melody: 315 notes, score 0.888 (21s) {'key': '5', 'tempo': 136, 'melody_notes': 80, 'voiced': 0.6811145510835913}
+[6/10] Marianne Faithfull - As Tears Go By
+    melody: 181 notes, score 0.859 (21s) {'key': '0', 'tempo': 64, 'melody_notes': 63, 'voiced': 0.8800309597523219}
+[7/10] Ella Langley - Choosin' Texas
+    melody: 277 notes, score 0.847 (23s) {'key': '1', 'tempo': 112, 'melody_notes': 84, 'voiced': 0.7743808049535603}
+[8/10] Red Hot Chili Peppers - Snow (Hey Oh)
+    melody: 253 notes, score 0.838 (23s) {'key': '11', 'tempo': 104, 'melody_notes': 70, 'voiced': 0.8486842105263158}
+[9/10] Toto - Africa
+    melody: 224 notes, score 0.816 (23s) {'key': '4', 'tempo': 93, 'melody_notes': 60, 'voiced': 0.6911764705882353}
+[10/10] Bill Withers - Ain't No Sunshine
+    melody: 372 notes, score 0.883 (23s) {'key': '9m', 'tempo': 161, 'melody_notes': 95, 'voiced': 0.9241486068111455}
+Done. Listen: python -m songgame review --lang en
+he 10 songs
+en 10 songs

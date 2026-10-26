@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "generated_at": "2026-10-26T08:45:47",
+  "generated_at": "2026-10-26T10:43:28",
   "count": 10,
   "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
   "songs": [
@@ -19,15 +19,23 @@
         "Top USA"
       ],
       "piano_file": "piano/3818963601.m4a",
-      "piano_offset_sec": 0.41,
-      "score": 0.8182,
-      "composer": "composer18",
+      "piano_offset_sec": 0.0,
+      "score": 0.8113,
+      "composer": "melody",
       "tried_composers": [
         "composer10",
-        "composer18"
+        "composer18",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/3818963601.m4a"
+      "piano_v1_file": "piano_v1/3818963601.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "10",
+        "tempo": 115,
+        "melody_notes": 76,
+        "voiced": 0.8289473684210527
+      }
     },
     {
       "deezer_id": 4167204822,
@@ -44,15 +52,23 @@
         "Deezer Global Top"
       ],
       "piano_file": "piano/4167204822.m4a",
-      "piano_offset_sec": 0.29,
-      "score": 0.888,
-      "composer": "composer4",
+      "piano_offset_sec": 0.0,
+      "score": 0.8787,
+      "composer": "melody",
       "tried_composers": [
         "composer21",
-        "composer4"
+        "composer4",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/4167204822.m4a"
+      "piano_v1_file": "piano_v1/4167204822.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "2m",
+        "tempo": 116,
+        "melody_notes": 87,
+        "voiced": 0.8912538699690402
+      }
     },
     {
       "deezer_id": 676844,
@@ -68,15 +84,23 @@
         "Best of 2000s"
       ],
       "piano_file": "piano/676844.m4a",
-      "piano_offset_sec": 0.43,
-      "score": 0.8216,
-      "composer": "composer11",
+      "piano_offset_sec": 0.0,
+      "score": 0.846,
+      "composer": "melody",
       "tried_composers": [
         "composer11",
-        "composer5"
+        "composer5",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/676844.m4a"
+      "piano_v1_file": "piano_v1/676844.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "6",
+        "tempo": 110,
+        "melody_notes": 34,
+        "voiced": 0.8734520123839009
+      }
     },
     {
       "deezer_id": 2525864,
@@ -91,15 +115,23 @@
         "Best of 80s"
       ],
       "piano_file": "piano/2525864.m4a",
-      "piano_offset_sec": 0.31,
-      "score": 0.843,
-      "composer": "composer4",
+      "piano_offset_sec": 0.19,
+      "score": 0.8142,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer4"
+        "composer4",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/2525864.m4a"
+      "piano_v1_file": "piano_v1/2525864.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "2m",
+        "tempo": 117,
+        "melody_notes": 82,
+        "voiced": 0.7113003095975232
+      }
     },
     {
       "deezer_id": 1144863,
@@ -115,15 +147,23 @@
         "Best of 70s"
       ],
       "piano_file": "piano/1144863.m4a",
-      "piano_offset_sec": 0.33,
-      "score": 0.8829,
-      "composer": "composer4",
+      "piano_offset_sec": 0.0,
+      "score": 0.8884,
+      "composer": "melody",
       "tried_composers": [
         "composer4",
-        "composer5"
+        "composer5",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/1144863.m4a"
+      "piano_v1_file": "piano_v1/1144863.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "5",
+        "tempo": 136,
+        "melody_notes": 80,
+        "voiced": 0.6811145510835913
+      }
     },
     {
       "deezer_id": 8081273,
@@ -138,15 +178,23 @@
         "Best of 60s"
       ],
       "piano_file": "piano/8081273.m4a",
-      "piano_offset_sec": 0.27,
-      "score": 0.8712,
-      "composer": "composer7",
+      "piano_offset_sec": 0.0,
+      "score": 0.859,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer7"
+        "composer7",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/8081273.m4a"
+      "piano_v1_file": "piano_v1/8081273.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "0",
+        "tempo": 64,
+        "melody_notes": 63,
+        "voiced": 0.8800309597523219
+      }
     },
     {
       "deezer_id": 3602074142,
@@ -163,15 +211,23 @@
         "Top USA"
       ],
       "piano_file": "piano/3602074142.m4a",
-      "piano_offset_sec": 0.31,
-      "score": 0.8599,
-      "composer": "composer17",
+      "piano_offset_sec": 0.0,
+      "score": 0.8472,
+      "composer": "melody",
       "tried_composers": [
         "composer17",
-        "composer8"
+        "composer8",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/3602074142.m4a"
+      "piano_v1_file": "piano_v1/3602074142.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "1",
+        "tempo": 112,
+        "melody_notes": 84,
+        "voiced": 0.7743808049535603
+      }
     },
     {
       "deezer_id": 680518,
@@ -188,15 +244,23 @@
         "Best of 2000s"
       ],
       "piano_file": "piano/680518.m4a",
-      "piano_offset_sec": 0.48,
-      "score": 0.861,
-      "composer": "composer7",
+      "piano_offset_sec": 0.0,
+      "score": 0.8381,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer7"
+        "composer7",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/680518.m4a"
+      "piano_v1_file": "piano_v1/680518.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "11",
+        "tempo": 104,
+        "melody_notes": 70,
+        "voiced": 0.8486842105263158
+      }
     },
     {
       "deezer_id": 1079668,
@@ -211,15 +275,23 @@
         "Best of 80s"
       ],
       "piano_file": "piano/1079668.m4a",
-      "piano_offset_sec": 0.53,
-      "score": 0.8417,
-      "composer": "composer10",
+      "piano_offset_sec": 0.0,
+      "score": 0.816,
+      "composer": "melody",
       "tried_composers": [
         "composer10",
-        "composer8"
+        "composer8",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/1079668.m4a"
+      "piano_v1_file": "piano_v1/1079668.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "4",
+        "tempo": 93,
+        "melody_notes": 60,
+        "voiced": 0.6911764705882353
+      }
     },
     {
       "deezer_id": 2312047,
@@ -234,15 +306,23 @@
         "Best of 70s"
       ],
       "piano_file": "piano/2312047.m4a",
-      "piano_offset_sec": 0.27,
-      "score": 0.8574,
-      "composer": "composer6",
+      "piano_offset_sec": 0.42,
+      "score": 0.8834,
+      "composer": "melody",
       "tried_composers": [
         "composer12",
-        "composer6"
+        "composer6",
+        "melody"
       ],
       "status": "ok",
-      "piano_v1_file": "piano_v1/2312047.m4a"
+      "piano_v1_file": "piano_v1/2312047.m4a",
+      "method": "melody",
+      "arrangement": {
+        "key": "9m",
+        "tempo": 161,
+        "melody_notes": 95,
+        "voiced": 0.9241486068111455
+      }
     }
   ]
 }
