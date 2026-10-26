@@ -67,7 +67,9 @@ jobs:
           ls | wc -l
 
       - name: Install Python packages
-        run: pip install -r pipeline/requirements.txt
+        run: |
+          set -o pipefail
+          pip install -r pipeline/requirements.txt 2>&1 | tail -40 | tee -a ~/run.log
 
       - name: Cache AI models
         uses: actions/cache@v4
@@ -79,7 +81,9 @@ jobs:
 
       - name: Self-test
         working-directory: pipeline
-        run: python tests/test_offline.py && python tests/test_melody.py
+        run: |
+          set -o pipefail
+          { python tests/test_offline.py && python tests/test_melody.py; } 2>&1 | tee -a ~/run.log
 
       - name: Make clips
         working-directory: pipeline
@@ -112,17 +116,17 @@ jobs:
               python -c "import json,sys;m=json.load(open(sys.argv[1]));print(sys.argv[2], m['count'], 'songs')" "../site/data/$lang/manifest.json" "$lang"
             fi
           done
-          } 2>&1 | tee ../last-run.log
+          } 2>&1 | tee -a ~/run.log
 
       - name: Save clips to the repository
         if: always()
         run: |
           git config user.name "piano-clips-bot"
           git config user.email "piano-clips-bot@users.noreply.github.com"
+          [ -f ~/run.log ] && cp ~/run.log last-run.log && git add last-run.log
           git add site/data
-          [ -f last-run.log ] && git add last-run.log
-          git diff --cached --quiet && { echo "No new clips"; exit 0; }
-          git commit -q -m "Add piano clips"
+          git diff --cached --quiet && { echo "Nothing to save"; exit 0; }
+          git commit -q -m "Piano clips run ${{ github.run_number }} (${{ job.status }})"
           git pull -q --rebase origin "${GITHUB_REF_NAME}"
           git push -q
 
