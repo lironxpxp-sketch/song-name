@@ -1,0 +1,228 @@
+{
+  "language": "he",
+  "generated_at": "2026-10-26T08:44:05",
+  "count": 10,
+  "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
+  "songs": [
+    {
+      "deezer_id": 4264385032,
+      "title": "נתתי לך בית",
+      "artist": "אופק אדנק",
+      "answers": [
+        "נתתי לך בית"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/88ea4234f553ad47d2e8c333167e3222/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/4264385032",
+      "sources": [
+        "Top Israel"
+      ],
+      "piano_file": "piano/4264385032.m4a",
+      "piano_offset_sec": 0.76,
+      "score": 0.8765,
+      "composer": "composer19",
+      "tried_composers": [
+        "composer18",
+        "composer19"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 3267549311,
+      "title": "רשימת קניות",
+      "artist": "סטילה",
+      "answers": [
+        "רשימת קניות"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/44e9c1b37315cf0208225ab1f28b6c88/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3267549311",
+      "sources": [
+        "Israeli Hits"
+      ],
+      "piano_file": "piano/3267549311.m4a",
+      "piano_offset_sec": 0.48,
+      "score": 0.6873,
+      "composer": "composer20",
+      "tried_composers": [
+        "composer20",
+        "composer6"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 370967591,
+      "title": "Tudo Bom",
+      "artist": "Static & Ben El Tavori",
+      "answers": [
+        "Tudo Bom"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6fb882228af950a31e36f8544fb08bca/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/370967591",
+      "sources": [
+        "להיטים ישראליים"
+      ],
+      "piano_file": "piano/370967591.m4a",
+      "piano_offset_sec": 0.33,
+      "score": 0.8156,
+      "composer": "composer20",
+      "tried_composers": [
+        "composer10",
+        "composer20"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 4057555601,
+      "title": "Story of a Warrior",
+      "artist": "John Michael Howell",
+      "answers": [
+        "Story of a Warrior"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/63135cc38c85d317f2ade61f4594de05/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/4057555601",
+      "sources": [
+        "Top Israel"
+      ],
+      "piano_file": "piano/4057555601.m4a",
+      "piano_offset_sec": 0.36,
+      "score": 0.8925,
+      "composer": "composer7",
+      "tried_composers": [
+        "composer18",
+        "composer7"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 3258684201,
+      "title": "חולמת",
+      "artist": "Odeya",
+      "answers": [
+        "חולמת"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/42606a95526f723b2f036f9ae44d7536/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3258684201",
+      "sources": [
+        "Israeli Hits"
+      ],
+      "piano_file": "piano/3258684201.m4a",
+      "piano_offset_sec": 1.52,
+      "score": 0.7796,
+      "composer": "composer5",
+      "tried_composers": [
+        "composer5",
+        "composer8"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 560948962,
+      "title": "מתוק כשמרלי",
+      "artist": "Eliad",
+      "answers": [
+        "מתוק כשמרלי"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5eb8e446da6698b7268f579f838f7414/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/560948962",
+      "sources": [
+        "להיטים ישראליים"
+      ],
+      "piano_file": "piano/560948962.m4a",
+      "piano_offset_sec": 0.19,
+      "score": 0.8652,
+      "composer": "composer17",
+      "tried_composers": [
+        "composer1",
+        "composer17"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 4086674521,
+      "title": "אבי הטחול",
+      "artist": "רואי אדם",
+      "answers": [
+        "אבי הטחול"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4e80e87d1f18f89bce3021ae1f437912/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/4086674521",
+      "sources": [
+        "Top Israel"
+      ],
+      "piano_file": "piano/4086674521.m4a",
+      "piano_offset_sec": 0.57,
+      "score": 0.848,
+      "composer": "composer5",
+      "tried_composers": [
+        "composer21",
+        "composer5"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 3197836191,
+      "title": "I Want to Be",
+      "artist": "German Avny",
+      "answers": [
+        "I Want to Be"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/4a123d6fe6f05efe4ec81885923f69f5/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3197836191",
+      "sources": [
+        "Israeli Hits"
+      ],
+      "piano_file": "piano/3197836191.m4a",
+      "piano_offset_sec": 0.26,
+      "score": 0.7877,
+      "composer": "composer13",
+      "tried_composers": [
+        "composer12",
+        "composer13"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 634643492,
+      "title": "שירים עד כאן",
+      "artist": "להקת חופים",
+      "answers": [
+        "שירים עד כאן"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/e9fa84276cbbef59e01a12bf29f3c7fd/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/634643492",
+      "sources": [
+        "Israeli Classics"
+      ],
+      "piano_file": "piano/634643492.m4a",
+      "piano_offset_sec": 0.69,
+      "score": 0.7796,
+      "composer": "composer18",
+      "tried_composers": [
+        "composer12",
+        "composer18"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 109741492,
+      "title": "Ihiye Beseder",
+      "artist": "Café Shahor Hazak",
+      "answers": [
+        "Ihiye Beseder"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/6baadf9a88070948479f405bb71cf005/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/109741492",
+      "sources": [
+        "להיטים ישראליים"
+      ],
+      "piano_file": "piano/109741492.m4a",
+      "piano_offset_sec": 0.47,
+      "score": 0.8116,
+      "composer": "composer19",
+      "tried_composers": [
+        "composer19",
+        "composer5"
+      ],
+      "status": "ok"
+    }
+  ]
+}

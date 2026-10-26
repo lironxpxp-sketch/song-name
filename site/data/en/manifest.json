@@ -1,0 +1,239 @@
+{
+  "language": "en",
+  "generated_at": "2026-10-26T08:45:47",
+  "count": 10,
+  "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
+  "songs": [
+    {
+      "deezer_id": 3818963601,
+      "title": "Dracula (with JENNIE)",
+      "artist": "Tame Impala",
+      "answers": [
+        "Dracula (with JENNIE)",
+        "Dracula"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b868399da682f34dcd7d98af1c0de80b/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3818963601",
+      "sources": [
+        "Deezer Global Top",
+        "Top Worldwide",
+        "Top USA"
+      ],
+      "piano_file": "piano/3818963601.m4a",
+      "piano_offset_sec": 0.41,
+      "score": 0.8182,
+      "composer": "composer18",
+      "tried_composers": [
+        "composer10",
+        "composer18"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 4167204822,
+      "title": "Been By Now",
+      "artist": "Morgan Wallen",
+      "answers": [
+        "Been By Now"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/38e835566214fba0d9f0c71d58e16145/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/4167204822",
+      "sources": [
+        "Top Worldwide",
+        "Top USA",
+        "Deezer Global Top"
+      ],
+      "piano_file": "piano/4167204822.m4a",
+      "piano_offset_sec": 0.29,
+      "score": 0.888,
+      "composer": "composer4",
+      "tried_composers": [
+        "composer21",
+        "composer4"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 676844,
+      "title": "Shadow of the Day",
+      "artist": "Linkin Park",
+      "answers": [
+        "Shadow of the Day"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/2dd699adcd68089f49f3ab558a2bd296/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/676844",
+      "sources": [
+        "Best of 2010s",
+        "Best of 2000s"
+      ],
+      "piano_file": "piano/676844.m4a",
+      "piano_offset_sec": 0.43,
+      "score": 0.8216,
+      "composer": "composer11",
+      "tried_composers": [
+        "composer11",
+        "composer5"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 2525864,
+      "title": "Every Breath You Take",
+      "artist": "The Police",
+      "answers": [
+        "Every Breath You Take"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/316afdaed93c4a18cf730389648d03d6/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/2525864",
+      "sources": [
+        "Best of 80s"
+      ],
+      "piano_file": "piano/2525864.m4a",
+      "piano_offset_sec": 0.31,
+      "score": 0.843,
+      "composer": "composer4",
+      "tried_composers": [
+        "composer12",
+        "composer4"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 1144863,
+      "title": "Rocket Man (I Think It's Going To Be A Long, Long Time)",
+      "artist": "Elton John",
+      "answers": [
+        "Rocket Man (I Think It's Going To Be A Long, Long Time)",
+        "Rocket Man"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/56121010d25e75058e2cc817037ad19b/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/1144863",
+      "sources": [
+        "Best of 70s"
+      ],
+      "piano_file": "piano/1144863.m4a",
+      "piano_offset_sec": 0.33,
+      "score": 0.8829,
+      "composer": "composer4",
+      "tried_composers": [
+        "composer4",
+        "composer5"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 8081273,
+      "title": "As Tears Go By",
+      "artist": "Marianne Faithfull",
+      "answers": [
+        "As Tears Go By"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/3de11617da6f05d8bfb859704eaf52ed/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/8081273",
+      "sources": [
+        "Best of 60s"
+      ],
+      "piano_file": "piano/8081273.m4a",
+      "piano_offset_sec": 0.27,
+      "score": 0.8712,
+      "composer": "composer7",
+      "tried_composers": [
+        "composer12",
+        "composer7"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 3602074142,
+      "title": "Choosin' Texas",
+      "artist": "Ella Langley",
+      "answers": [
+        "Choosin' Texas"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/749ad2ad7609ec768e342bec41078095/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/3602074142",
+      "sources": [
+        "Deezer Global Top",
+        "Top Worldwide",
+        "Top USA"
+      ],
+      "piano_file": "piano/3602074142.m4a",
+      "piano_offset_sec": 0.31,
+      "score": 0.8599,
+      "composer": "composer17",
+      "tried_composers": [
+        "composer17",
+        "composer8"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 680518,
+      "title": "Snow (Hey Oh)",
+      "artist": "Red Hot Chili Peppers",
+      "answers": [
+        "Snow (Hey Oh)",
+        "Snow"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/a3a4028b1192c50d82a579439cbfc4af/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/680518",
+      "sources": [
+        "Best of 2010s",
+        "Best of 2000s"
+      ],
+      "piano_file": "piano/680518.m4a",
+      "piano_offset_sec": 0.48,
+      "score": 0.861,
+      "composer": "composer7",
+      "tried_composers": [
+        "composer12",
+        "composer7"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 1079668,
+      "title": "Africa",
+      "artist": "Toto",
+      "answers": [
+        "Africa"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/153332e88a14255a8c3d5959a5a21882/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/1079668",
+      "sources": [
+        "Best of 80s"
+      ],
+      "piano_file": "piano/1079668.m4a",
+      "piano_offset_sec": 0.53,
+      "score": 0.8417,
+      "composer": "composer10",
+      "tried_composers": [
+        "composer10",
+        "composer8"
+      ],
+      "status": "ok"
+    },
+    {
+      "deezer_id": 2312047,
+      "title": "Ain't No Sunshine",
+      "artist": "Bill Withers",
+      "answers": [
+        "Ain't No Sunshine"
+      ],
+      "cover": "https://cdn-images.dzcdn.net/images/cover/0a582ace7dda823714f8eaaa74ab9505/250x250-000000-80-0-0.jpg",
+      "deezer_link": "https://www.deezer.com/track/2312047",
+      "sources": [
+        "Best of 70s"
+      ],
+      "piano_file": "piano/2312047.m4a",
+      "piano_offset_sec": 0.27,
+      "score": 0.8574,
+      "composer": "composer6",
+      "tried_composers": [
+        "composer12",
+        "composer6"
+      ],
+      "status": "ok"
+    }
+  ]
+}
