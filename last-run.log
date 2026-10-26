@@ -1,37 +1,37 @@
-Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 188.2 MB/s  0:00:00
-Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
-Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 342.2 MB/s  0:00:00
-Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)
-Downloading soundfile-0.14.0-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 244.7 MB/s  0:00:00
-Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
-Downloading soxr-1.1.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
-Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
-Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
-Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
-Downloading dora_search-0.1.13-py3-none-any.whl (73 kB)
-Downloading einops-0.8.2-py3-none-any.whl (65 kB)
-Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
-Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
-Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
-Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 291.1 MB/s  0:00:00
-Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
-Downloading openunmix-1.3.0-py3-none-any.whl (40 kB)
-Downloading pycparser-3.12-py3-none-any.whl (62 kB)
-Downloading retrying-1.4.2-py3-none-any.whl (10 kB)
-Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
-Downloading submitit-1.5.4-py3-none-any.whl (76 kB)
-Downloading treetable-0.2.6-py3-none-any.whl (7.4 kB)
-Building wheels for collected packages: demucs
-  Building wheel for demucs (pyproject.toml): started
-  Building wheel for demucs (pyproject.toml): finished with status 'done'
-  Created wheel for demucs: filename=demucs-4.0.1-py3-none-any.whl size=78480 sha256=37a4cf91439c43264b390de8e398be32a4e77487221fa4cf937a8ad64eb38112
-  Stored in directory: /home/runner/.cache/pip/wheels/bb/06/a3/83489d50c9f015fa981a2a7bb08fcede75120a0de56775353f
-Successfully built demucs
+Using cached lameenc-1.9.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_34_x86_64.whl (187 kB)
+Using cached lazy_loader-0.6-py3-none-any.whl (8.8 kB)
+Using cached mido-1.3.3-py3-none-any.whl (54 kB)
+Using cached msgpack-1.2.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (477 kB)
+Using cached numba-0.68.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+Using cached llvmlite-0.50.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (59.7 MB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pooch-1.9.0-py3-none-any.whl (67 kB)
+Using cached platformdirs-4.13.5-py3-none-any.whl (32 kB)
+Using cached pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+Using cached regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+Using cached safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Using cached scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+Using cached narwhals-2.27.1-py3-none-any.whl (483 kB)
+Using cached soundfile-0.14.0-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
+Using cached cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+Using cached soxr-1.1.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
+Using cached threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Using cached tqdm-4.70.1-py3-none-any.whl (80 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached dora_search-0.1.13-py3-none-any.whl (73 kB)
+Using cached einops-0.8.2-py3-none-any.whl (65 kB)
+Using cached filelock-4.2.4-py3-none-any.whl (162 kB)
+Using cached importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Using cached networkx-3.6.1-py3-none-any.whl (2.1 MB)
+Using cached omegaconf-2.4.0-py3-none-any.whl (254 kB)
+Using cached openunmix-1.3.0-py3-none-any.whl (40 kB)
+Using cached pycparser-3.12-py3-none-any.whl (62 kB)
+Using cached retrying-1.4.2-py3-none-any.whl (10 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached submitit-1.5.4-py3-none-any.whl (76 kB)
+Using cached treetable-0.2.6-py3-none-any.whl (7.4 kB)
 Installing collected packages: mpmath, urllib3, typing-extensions, treetable, tqdm, threadpoolctl, sympy, six, safetensors, retrying, regex, pyyaml, pycparser, platformdirs, packaging, numpy, networkx, narwhals, msgpack, MarkupSafe, llvmlite, lameenc, importlib_resources, idna, hf-xet, fsspec, filelock, einops, decorator, cloudpickle, charset_normalizer, certifi, audioread, submitit, soxr, scipy, requests, omegaconf, numba, mido, lazy_loader, joblib, jinja2, essentia, cffi, torch, soundfile, scikit-learn, resampy, pretty-midi, pooch, huggingface-hub, torchaudio, tokenizers, librosa, julius, dora-search, transformers, openunmix, demucs
 
 Successfully installed MarkupSafe-3.0.4 audioread-3.1.0 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 cloudpickle-3.1.2 decorator-5.3.1 demucs-4.0.1 dora-search-0.1.13 einops-0.8.2 essentia-2.1b6.dev1389 filelock-4.2.4 fsspec-2026.9.0 hf-xet-1.7.0 huggingface-hub-0.36.2 idna-3.20 importlib_resources-7.1.0 jinja2-3.1.6 joblib-1.6.0 julius-0.2.8 lameenc-1.9.0 lazy_loader-0.6 librosa-0.11.0 llvmlite-0.50.0 mido-1.3.3 mpmath-1.3.0 msgpack-1.2.3 narwhals-2.27.1 networkx-3.6.1 numba-0.68.0 numpy-1.26.4 omegaconf-2.4.0 openunmix-1.3.0 packaging-26.3 platformdirs-4.13.5 pooch-1.9.0 pretty-midi-0.2.11.post0 pycparser-3.12 pyyaml-6.0.3 regex-2026.9.29 requests-2.34.2 resampy-0.4.3 retrying-1.4.2 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 six-1.17.0 soundfile-0.14.0 soxr-1.1.0 submitit-1.5.4 sympy-1.13.1 threadpoolctl-3.7.0 tokenizers-0.22.2 torch-2.5.1+cpu torchaudio-2.5.1+cpu tqdm-4.70.1 transformers-4.57.6 treetable-0.2.6 typing-extensions-4.16.0 urllib3-2.8.0
@@ -54,51 +54,49 @@ ok test_chords
   128 bpm -> 128.0 bpm, phase 0.20
 ok test_beat
 ok test_accompaniment_and_start
-Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th" to /home/runner/.cache/torch/hub/checkpoints/955717e8-8726e21a.th
 Loading the vocal separation model (first run downloads it)...
-  0%|          | 0.00/80.2M [00:00<?, ?B/s]  2%|▏         | 2.00M/80.2M [00:00<00:04, 19.9MB/s] 28%|██▊       | 22.2M/80.2M [00:00<00:00, 131MB/s]  78%|███████▊  | 62.4M/80.2M [00:00<00:00, 257MB/s]100%|██████████| 80.2M/80.2M [00:00<00:00, 241MB/s]
 [1/10] אופק אדנק - נתתי לך בית
-    melody: 313 notes, score 0.910 (46s) {'key': '7m', 'tempo': 141, 'melody_notes': 72, 'voiced': 0.8391337973704563}
+    melody: 312 notes, score 0.910 (33s) {'key': '7m', 'tempo': 141, 'melody_notes': 71, 'voiced': 0.8402938901778809}
 [2/10] סטילה - רשימת קניות
-    melody: 331 notes, score 0.845 (21s) {'key': '9m', 'tempo': 128, 'melody_notes': 109, 'voiced': 0.7476780185758514}
+    melody: 328 notes, score 0.841 (15s) {'key': '9m', 'tempo': 128, 'melody_notes': 108, 'voiced': 0.7527089783281734}
 [3/10] Static & Ben El Tavori - Tudo Bom
-    melody: 304 notes, score 0.835 (21s) {'key': '4', 'tempo': 130, 'melody_notes': 76, 'voiced': 0.7236842105263158}
+    melody: 306 notes, score 0.858 (15s) {'key': '4', 'tempo': 130, 'melody_notes': 77, 'voiced': 0.7194272445820433}
 [4/10] John Michael Howell - Story of a Warrior
-    melody: 265 notes, score 0.911 (21s) {'key': '9m', 'tempo': 107, 'melody_notes': 81, 'voiced': 0.8796439628482973}
+    melody: 266 notes, score 0.913 (14s) {'key': '9m', 'tempo': 107, 'melody_notes': 81, 'voiced': 0.8769349845201239}
 [5/10] Odeya - חולמת
-    melody: 286 notes, score 0.813 (21s) {'key': '8m', 'tempo': 126, 'melody_notes': 76, 'voiced': 0.6288699690402477}
+    melody: 297 notes, score 0.814 (15s) {'key': '6', 'tempo': 126, 'melody_notes': 86, 'voiced': 0.6718266253869969}
 [6/10] Eliad - מתוק כשמרלי
-    melody: 232 notes, score 0.843 (22s) {'key': '10m', 'tempo': 85, 'melody_notes': 83, 'voiced': 0.8370743034055728}
+    melody: 232 notes, score 0.844 (15s) {'key': '10m', 'tempo': 85, 'melody_notes': 83, 'voiced': 0.836687306501548}
 [7/10] רואי אדם - אבי הטחול
-    melody: 242 notes, score 0.809 (21s) {'key': '10', 'tempo': 87, 'melody_notes': 84, 'voiced': 0.8475232198142415}
+    melody: 246 notes, score 0.829 (15s) {'key': '10', 'tempo': 87, 'melody_notes': 84, 'voiced': 0.8335913312693498}
 [8/10] German Avny - I Want to Be
-    melody: 247 notes, score 0.872 (21s) {'key': '10', 'tempo': 128, 'melody_notes': 22, 'voiced': 0.20859133126934984}
+    melody: 252 notes, score 0.871 (15s) {'key': '10', 'tempo': 128, 'melody_notes': 27, 'voiced': 0.2836687306501548}
 [9/10] להקת חופים - שירים עד כאן
-    melody: 213 notes, score 0.856 (21s) {'key': '9m', 'tempo': 75, 'melody_notes': 77, 'voiced': 0.8618421052631579}
+    melody: 218 notes, score 0.852 (15s) {'key': '9m', 'tempo': 75, 'melody_notes': 81, 'voiced': 0.8722910216718266}
 [10/10] Café Shahor Hazak - Ihiye Beseder
-    melody: 329 notes, score 0.853 (21s) {'key': '8', 'tempo': 133, 'melody_notes': 90, 'voiced': 0.776702786377709}
+    melody: 326 notes, score 0.854 (15s) {'key': '8', 'tempo': 133, 'melody_notes': 90, 'voiced': 0.7921826625386997}
 Done. Listen: python -m songgame review --lang he
 Loading the vocal separation model (first run downloads it)...
 [1/10] Tame Impala - Dracula
-    melody: 279 notes, score 0.811 (28s) {'key': '10', 'tempo': 115, 'melody_notes': 76, 'voiced': 0.8289473684210527}
+    melody: 278 notes, score 0.837 (20s) {'key': '10', 'tempo': 115, 'melody_notes': 75, 'voiced': 0.8428792569659442}
 [2/10] Morgan Wallen - Been By Now
-    melody: 287 notes, score 0.879 (21s) {'key': '2m', 'tempo': 116, 'melody_notes': 87, 'voiced': 0.8912538699690402}
+    melody: 284 notes, score 0.891 (14s) {'key': '2m', 'tempo': 116, 'melody_notes': 84, 'voiced': 0.9078947368421053}
 [3/10] Linkin Park - Shadow of the Day
-    melody: 235 notes, score 0.846 (21s) {'key': '6', 'tempo': 110, 'melody_notes': 34, 'voiced': 0.8734520123839009}
+    melody: 236 notes, score 0.853 (14s) {'key': '6', 'tempo': 110, 'melody_notes': 35, 'voiced': 0.8726780185758514}
 [4/10] The Police - Every Breath You Take
-    melody: 285 notes, score 0.814 (21s) {'key': '2m', 'tempo': 117, 'melody_notes': 82, 'voiced': 0.7113003095975232}
+    melody: 284 notes, score 0.850 (14s) {'key': '2m', 'tempo': 117, 'melody_notes': 78, 'voiced': 0.7147832817337462}
 [5/10] Elton John - Rocket Man (I Think It's Going To Be A Long, Long Time)
-    melody: 315 notes, score 0.888 (21s) {'key': '5', 'tempo': 136, 'melody_notes': 80, 'voiced': 0.6811145510835913}
+    melody: 313 notes, score 0.901 (15s) {'key': '5', 'tempo': 136, 'melody_notes': 77, 'voiced': 0.6753095975232198}
 [6/10] Marianne Faithfull - As Tears Go By
-    melody: 181 notes, score 0.859 (21s) {'key': '0', 'tempo': 64, 'melody_notes': 63, 'voiced': 0.8800309597523219}
+    melody: 179 notes, score 0.859 (14s) {'key': '0', 'tempo': 64, 'melody_notes': 61, 'voiced': 0.8904798761609907}
 [7/10] Ella Langley - Choosin' Texas
-    melody: 277 notes, score 0.847 (23s) {'key': '1', 'tempo': 112, 'melody_notes': 84, 'voiced': 0.7743808049535603}
+    melody: 278 notes, score 0.847 (14s) {'key': '1', 'tempo': 112, 'melody_notes': 85, 'voiced': 0.7708978328173375}
 [8/10] Red Hot Chili Peppers - Snow (Hey Oh)
-    melody: 253 notes, score 0.838 (23s) {'key': '11', 'tempo': 104, 'melody_notes': 70, 'voiced': 0.8486842105263158}
+    melody: 250 notes, score 0.833 (14s) {'key': '11', 'tempo': 104, 'melody_notes': 66, 'voiced': 0.8440402476780186}
 [9/10] Toto - Africa
-    melody: 224 notes, score 0.816 (23s) {'key': '4', 'tempo': 93, 'melody_notes': 60, 'voiced': 0.6911764705882353}
+    melody: 222 notes, score 0.818 (14s) {'key': '4', 'tempo': 93, 'melody_notes': 57, 'voiced': 0.6981424148606811}
 [10/10] Bill Withers - Ain't No Sunshine
-    melody: 372 notes, score 0.883 (23s) {'key': '9m', 'tempo': 161, 'melody_notes': 95, 'voiced': 0.9241486068111455}
+    melody: 370 notes, score 0.882 (14s) {'key': '9m', 'tempo': 161, 'melody_notes': 95, 'voiced': 0.9082817337461301}
 Done. Listen: python -m songgame review --lang en
 he 10 songs
 en 10 songs

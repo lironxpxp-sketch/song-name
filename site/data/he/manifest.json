@@ -1,6 +1,6 @@
 {
   "language": "he",
-  "generated_at": "2026-10-26T10:39:30",
+  "generated_at": "2026-10-26T10:48:23",
   "count": 10,
   "note": "Fetch the real song at play time with GET https://api.deezer.com/track/<deezer_id> and use its 'preview' field; preview links expire.",
   "songs": [
@@ -18,7 +18,7 @@
       ],
       "piano_file": "piano/4264385032.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.9101,
+      "score": 0.9103,
       "composer": "melody",
       "tried_composers": [
         "composer18",
@@ -31,8 +31,8 @@
       "arrangement": {
         "key": "7m",
         "tempo": 141,
-        "melody_notes": 72,
-        "voiced": 0.8391337973704563
+        "melody_notes": 71,
+        "voiced": 0.8402938901778809
       }
     },
     {
@@ -49,7 +49,7 @@
       ],
       "piano_file": "piano/3267549311.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8447,
+      "score": 0.8409,
       "composer": "melody",
       "tried_composers": [
         "composer20",
@@ -62,8 +62,8 @@
       "arrangement": {
         "key": "9m",
         "tempo": 128,
-        "melody_notes": 109,
-        "voiced": 0.7476780185758514
+        "melody_notes": 108,
+        "voiced": 0.7527089783281734
       }
     },
     {
@@ -80,7 +80,7 @@
       ],
       "piano_file": "piano/370967591.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8352,
+      "score": 0.858,
       "composer": "melody",
       "tried_composers": [
         "composer10",
@@ -93,8 +93,8 @@
       "arrangement": {
         "key": "4",
         "tempo": 130,
-        "melody_notes": 76,
-        "voiced": 0.7236842105263158
+        "melody_notes": 77,
+        "voiced": 0.7194272445820433
       }
     },
     {
@@ -111,7 +111,7 @@
       ],
       "piano_file": "piano/4057555601.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.9113,
+      "score": 0.9129,
       "composer": "melody",
       "tried_composers": [
         "composer18",
@@ -125,7 +125,7 @@
         "key": "9m",
         "tempo": 107,
         "melody_notes": 81,
-        "voiced": 0.8796439628482973
+        "voiced": 0.8769349845201239
       }
     },
     {
@@ -141,8 +141,8 @@
         "Israeli Hits"
       ],
       "piano_file": "piano/3258684201.m4a",
-      "piano_offset_sec": 0.92,
-      "score": 0.813,
+      "piano_offset_sec": 0.0,
+      "score": 0.8135,
       "composer": "melody",
       "tried_composers": [
         "composer5",
@@ -153,10 +153,10 @@
       "piano_v1_file": "piano_v1/3258684201.m4a",
       "method": "melody",
       "arrangement": {
-        "key": "8m",
+        "key": "6",
         "tempo": 126,
-        "melody_notes": 76,
-        "voiced": 0.6288699690402477
+        "melody_notes": 86,
+        "voiced": 0.6718266253869969
       }
     },
     {
@@ -173,7 +173,7 @@
       ],
       "piano_file": "piano/560948962.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8431,
+      "score": 0.8444,
       "composer": "melody",
       "tried_composers": [
         "composer1",
@@ -187,7 +187,7 @@
         "key": "10m",
         "tempo": 85,
         "melody_notes": 83,
-        "voiced": 0.8370743034055728
+        "voiced": 0.836687306501548
       }
     },
     {
@@ -204,7 +204,7 @@
       ],
       "piano_file": "piano/4086674521.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8087,
+      "score": 0.8287,
       "composer": "melody",
       "tried_composers": [
         "composer21",
@@ -218,7 +218,7 @@
         "key": "10",
         "tempo": 87,
         "melody_notes": 84,
-        "voiced": 0.8475232198142415
+        "voiced": 0.8335913312693498
       }
     },
     {
@@ -235,7 +235,7 @@
       ],
       "piano_file": "piano/3197836191.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8724,
+      "score": 0.871,
       "composer": "melody",
       "tried_composers": [
         "composer12",
@@ -248,8 +248,8 @@
       "arrangement": {
         "key": "10",
         "tempo": 128,
-        "melody_notes": 22,
-        "voiced": 0.20859133126934984
+        "melody_notes": 27,
+        "voiced": 0.2836687306501548
       }
     },
     {
@@ -266,7 +266,7 @@
       ],
       "piano_file": "piano/634643492.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8559,
+      "score": 0.8516,
       "composer": "melody",
       "tried_composers": [
         "composer12",
@@ -279,8 +279,8 @@
       "arrangement": {
         "key": "9m",
         "tempo": 75,
-        "melody_notes": 77,
-        "voiced": 0.8618421052631579
+        "melody_notes": 81,
+        "voiced": 0.8722910216718266
       }
     },
     {
@@ -297,7 +297,7 @@
       ],
       "piano_file": "piano/109741492.m4a",
       "piano_offset_sec": 0.0,
-      "score": 0.8529,
+      "score": 0.8541,
       "composer": "melody",
       "tried_composers": [
         "composer19",
@@ -311,7 +311,7 @@
         "key": "8",
         "tempo": 133,
         "melody_notes": 90,
-        "voiced": 0.776702786377709
+        "voiced": 0.7921826625386997
       }
     }
   ]
