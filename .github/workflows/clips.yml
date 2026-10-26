@@ -14,6 +14,10 @@ on:
       variants:
         description: "Piano styles to try per song (more = better, slower)"
         default: "2"
+      rebuild:
+        description: "Remake ALL existing songs (after an improvement)"
+        type: boolean
+        default: false
       redo_ids:
         description: "Optional: Deezer IDs to regenerate, comma-separated (only these are done)"
         default: ""
@@ -49,15 +53,17 @@ jobs:
       - name: Install Python packages
         run: pip install -r pipeline/requirements.txt
 
-      - name: Cache the Pop2Piano model
+      - name: Cache AI models
         uses: actions/cache@v4
         with:
-          path: ~/.cache/huggingface
-          key: pop2piano-v1
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/torch
+          key: models-v2
 
       - name: Self-test
         working-directory: pipeline
-        run: python tests/test_offline.py
+        run: python tests/test_offline.py && python tests/test_melody.py
 
       - name: Make clips
         working-directory: pipeline
@@ -67,8 +73,15 @@ jobs:
           VARIANTS: ${{ inputs.variants }}
           REDO_IDS: ${{ inputs.redo_ids }}
           REDO_LANG: ${{ inputs.redo_lang }}
+          REBUILD: ${{ inputs.rebuild }}
         run: |
-          if [ -n "$REDO_IDS" ]; then
+          set -o pipefail
+          {
+          if [ "$REBUILD" = "true" ]; then
+            for lang in $LANGS; do
+              python -m songgame --out ../site/data build --lang "$lang" --all
+            done
+          elif [ -n "$REDO_IDS" ]; then
             python -m songgame --out ../site/data build --lang "$REDO_LANG" --ids "$REDO_IDS" --variants "$VARIANTS"
           else
             for lang in $LANGS; do
@@ -79,15 +92,19 @@ jobs:
             done
           fi
           for lang in he en; do
-            [ -f "../site/data/$lang/manifest.json" ] && \
+            if [ -f "../site/data/$lang/manifest.json" ]; then
               python -c "import json,sys;m=json.load(open(sys.argv[1]));print(sys.argv[2], m['count'], 'songs')" "../site/data/$lang/manifest.json" "$lang"
+            fi
           done
+          } 2>&1 | tee ../last-run.log
 
       - name: Save clips to the repository
+        if: always()
         run: |
           git config user.name "piano-clips-bot"
           git config user.email "piano-clips-bot@users.noreply.github.com"
           git add site/data
+          [ -f last-run.log ] && git add last-run.log
           git diff --cached --quiet && { echo "No new clips"; exit 0; }
           git commit -q -m "Add piano clips"
           git pull -q --rebase origin "${GITHUB_REF_NAME}"

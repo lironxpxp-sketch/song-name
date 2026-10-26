@@ -108,11 +108,13 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
             wav = Path(tmp) / f"{comp}.wav"
             render(notes, wav, cfg.get("soundfont"))
             s = score(ref_audio, A.decode(wav, SCORE_SR), notes, SCORE_SR)
-            log(f"    {comp}: {len(notes)} notes, score {s:.3f} ({time.time()-t0:.0f}s)")
+            info = getattr(generator, "last_info", None)
+            log(f"    {comp}: {len(notes)} notes, score {s:.3f} ({time.time()-t0:.0f}s)"
+                + (f" {info}" if info else ""))
             if best is None or s > best[0]:
                 best = (s, comp, notes, wav)
         s, comp, notes, wav = best
-        start = max(0.0, first_onset(notes) - 0.15)        # no dead air at step 1
+        start = clip_start(notes, cfg.get("clip_seconds", 30))
         clip = lang_dir / "piano" / f"{sid}.m4a"
         A.encode_m4a(wav, clip, start, cfg.get("clip_seconds", 30))
     song.update({
@@ -122,11 +124,28 @@ def make_piano(song, lang_dir, generator, composers, cfg, dz: Deezer, log=print)
         "composer": comp,
         "tried_composers": sorted(set(song.get("tried_composers", [])) | set(composers)),
         "status": "ok" if s >= cfg.get("min_score", 0.45) else "needs_review",
+        "method": cfg.get("method", "melody"),
     })
+    info = getattr(generator, "last_info", None)
+    if info:
+        song["arrangement"] = info
+        if info.get("melody_notes", 99) < 12:
+            song["status"] = "needs_review"      # hardly any singing found
     return song
 
 
+def clip_start(notes, clip_len=30.0):
+    """Start where the singing starts (that's what people recognize), unless
+    that leaves too short a clip; otherwise start at the first note."""
+    mel = [n.start for n in notes if n.role == "melody"]
+    if mel and min(mel) <= clip_len - 18:
+        return round(max(0.0, min(mel) - 0.4), 2)
+    return round(max(0.0, first_onset(notes) - 0.15), 2)
+
+
 def _pick_composers(song, n, cfg):
+    if cfg.get("method", "melody") == "melody":
+        return ["melody"]
     tried = set(song.get("tried_composers", []))
     pool = [c for c in cfg.get("composers") or COMPOSERS if c not in tried] or COMPOSERS
     rng = random.Random(song["deezer_id"] + len(tried))
@@ -156,9 +175,14 @@ def build(cfg, lang, out_dir, limit=None, variants=None, ids=None, generator=Non
         return manifest
 
     if generator is None:
-        log("Loading Pop2Piano (first run downloads the model)...")
-        from .piano import Pop2PianoGenerator
-        generator = Pop2PianoGenerator(cfg.get("device", "auto"))
+        if cfg.get("method", "melody") == "melody":
+            log("Loading the vocal separation model (first run downloads it)...")
+            from .melody import MelodyArranger
+            generator = MelodyArranger(cfg.get("device", "auto"))
+        else:
+            log("Loading Pop2Piano (first run downloads the model)...")
+            from .piano import Pop2PianoGenerator
+            generator = Pop2PianoGenerator(cfg.get("device", "auto"))
 
     for i, song in enumerate(todo, 1):
         log(f"[{i}/{len(todo)}] {song['artist']} - {song['title']}")
@@ -166,7 +190,8 @@ def build(cfg, lang, out_dir, limit=None, variants=None, ids=None, generator=Non
             done = make_piano(dict(song), lang_dir, generator,
                               _pick_composers(song, variants, cfg), cfg, dz, log)
         except Exception as e:                       # keep going on bad tracks
-            log(f"    ! skipped: {e}")
+            import traceback
+            log(f"    ! skipped: {e!r}\n" + "".join(traceback.format_exc().splitlines(True)[-6:]))
             continue
         manifest[done["deezer_id"]] = done
         _write_manifest(lang_dir, lang, manifest, songs)

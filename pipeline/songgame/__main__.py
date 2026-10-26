@@ -34,6 +34,7 @@ def main(argv=None):
     b.add_argument("--limit", type=int, help="stop when this many songs are done in total")
     b.add_argument("--variants", type=int, help="piano versions to try per song")
     b.add_argument("--ids", help="comma-separated Deezer IDs to (re)generate")
+    b.add_argument("--all", action="store_true", help="regenerate every song already made")
 
     r = sub.add_parser("review", help="write a listening page for checking quality")
     r.add_argument("--lang", required=True)
@@ -50,6 +51,9 @@ def main(argv=None):
         B.collect(cfg, a.lang, a.out)
     elif a.cmd == "build":
         ids = [int(x) for x in a.ids.split(",")] if a.ids else None
+        if a.all:
+            man = Path(a.out) / a.lang / "manifest.json"
+            ids = [s["deezer_id"] for s in json.loads(man.read_text("utf-8"))["songs"]] if man.exists() else None
         B.build(cfg, a.lang, a.out, a.limit, a.variants, ids)
         print(f"Done. Listen: python -m songgame review --lang {a.lang}")
     elif a.cmd == "review":

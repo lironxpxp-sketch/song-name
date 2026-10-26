@@ -24,6 +24,7 @@ class Note:
     end: float
     pitch: int
     velocity: int = 80
+    role: str = ""          # "melody", "chord", "bass" (melody method only)
 
 
 # ---------------------------------------------------------------------------

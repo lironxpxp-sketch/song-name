@@ -26,7 +26,8 @@
         "composer10",
         "composer18"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/3818963601.m4a"
     },
     {
       "deezer_id": 4167204822,
@@ -50,7 +51,8 @@
         "composer21",
         "composer4"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/4167204822.m4a"
     },
     {
       "deezer_id": 676844,
@@ -73,7 +75,8 @@
         "composer11",
         "composer5"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/676844.m4a"
     },
     {
       "deezer_id": 2525864,
@@ -95,7 +98,8 @@
         "composer12",
         "composer4"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/2525864.m4a"
     },
     {
       "deezer_id": 1144863,
@@ -118,7 +122,8 @@
         "composer4",
         "composer5"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/1144863.m4a"
     },
     {
       "deezer_id": 8081273,
@@ -140,7 +145,8 @@
         "composer12",
         "composer7"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/8081273.m4a"
     },
     {
       "deezer_id": 3602074142,
@@ -164,7 +170,8 @@
         "composer17",
         "composer8"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/3602074142.m4a"
     },
     {
       "deezer_id": 680518,
@@ -188,7 +195,8 @@
         "composer12",
         "composer7"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/680518.m4a"
     },
     {
       "deezer_id": 1079668,
@@ -210,7 +218,8 @@
         "composer10",
         "composer8"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/1079668.m4a"
     },
     {
       "deezer_id": 2312047,
@@ -232,7 +241,8 @@
         "composer12",
         "composer6"
       ],
-      "status": "ok"
+      "status": "ok",
+      "piano_v1_file": "piano_v1/2312047.m4a"
     }
   ]
 }

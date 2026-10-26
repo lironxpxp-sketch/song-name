@@ -134,7 +134,7 @@ def test_end_to_end():
         sess = FakeSession((d / "orig.mp3").read_bytes())
         dz = Deezer(session=sess, min_interval=0)
         cfg = {
-            "clip_seconds": 30, "min_score": 0.45, "soundfont": None,
+            "clip_seconds": 30, "min_score": 0.45, "soundfont": None, "method": "pop2piano",
             "composers": ["composer1", "composer2", "composer3"],
             "languages": {"he": {"sources": [
                 {"type": "chart", "label": "Chart", "max_tracks": 10},
